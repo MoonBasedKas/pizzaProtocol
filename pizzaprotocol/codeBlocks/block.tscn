@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://k44tu0keq5af"]
 
 [ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_67hbe"]
-[ext_resource type="Texture2D" uid="uid://bnww66cu72mdf" path="res://icon.svg" id="1_tao1j"]
+[ext_resource type="Texture2D" uid="uid://dfgyvm6hhyugs" path="res://codeBlocks/blockSprites/GenericBlock.png" id="2_js6f4"]
 [ext_resource type="Script" uid="uid://cg31bk3e65llc" path="res://codeBlocks/block_sprite.gd" id="3_js6f4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47x6e"]
@@ -11,7 +11,8 @@ radius = 83.3847
 script = ExtResource("1_67hbe")
 
 [node name="blockSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_tao1j")
+position = Vector2(1, 37)
+texture = ExtResource("2_js6f4")
 script = ExtResource("3_js6f4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
