@@ -1,2 +1,4 @@
 res://codeBlocks/block.tscn
+res://blockBehavior.gd
 res://scenes/codeMenu.tscn
+res://codeBlocks/block_sprite.gd

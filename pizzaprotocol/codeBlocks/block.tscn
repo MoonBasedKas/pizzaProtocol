@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://k44tu0keq5af"]
+[gd_scene load_steps=5 format=3 uid="uid://k44tu0keq5af"]
 
+[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_67hbe"]
 [ext_resource type="Texture2D" uid="uid://bnww66cu72mdf" path="res://icon.svg" id="1_tao1j"]
+[ext_resource type="Script" uid="uid://cg31bk3e65llc" path="res://codeBlocks/block_sprite.gd" id="3_js6f4"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_47x6e"]
+radius = 83.3847
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(63, 63)
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_67hbe")
+
+[node name="blockSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_tao1j")
+script = ExtResource("3_js6f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_47x6e")
