@@ -18,8 +18,8 @@ radius = 21.095
 [sub_resource type="CircleShape2D" id="CircleShape2D_2kxba"]
 radius = 24.7386
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbdc3"]
-size = Vector2(68, 50)
+[sub_resource type="CircleShape2D" id="CircleShape2D_a82ns"]
+radius = 15.0
 
 [node name="GenericCodeBlock" type="CharacterBody2D"]
 script = ExtResource("1_jl6ti")
@@ -66,5 +66,5 @@ shape = SubResource("CircleShape2D_2kxba")
 
 [node name="OverlapPrevention" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_gbdc3")
+shape = SubResource("CircleShape2D_a82ns")
 script = ExtResource("5_a82ns")

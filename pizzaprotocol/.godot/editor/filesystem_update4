@@ -1,5 +1,4 @@
-res://codeBlocks/GenericCodeBlock.tscn
-res://blockBehavior.gd
 res://scenes/codeMenu.tscn
-res://codeBlocks/blockConnector.gd
+res://codeBlocks/GenericCodeBlock.tscn
 res://codeBlocks/overlap_prevention.gd
+res://blockBehavior.gd

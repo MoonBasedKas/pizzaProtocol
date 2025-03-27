@@ -5,6 +5,7 @@ var top = null
 var bottom = null
 var left = null
 var right = null
+var rng = RandomNumberGenerator.new()
 
 # Gets the sprite object and if it was clicked move it.
 func _physics_process(delta):
@@ -13,9 +14,13 @@ func _physics_process(delta):
 	if (body.isClicked()):
 		# Basically a magical version of slide and move just obectively better.
 		global_position = lerp(global_position, get_global_mouse_position(), speed * delta)
-	if get_node("OverlapPrevention").getOverlapping():
-		velocity = Vector2(0,1)
+	
+	var col = move_and_collide(Vector2(0,0))
+	if col:
+		
+		velocity = Vector2( rng.randi_range(-5, 5), rng.randi_range(-5, 5))
 		move_and_slide()
+	
 		
 # Gets the connections and their parents if there is a connection
 func getConnections():
