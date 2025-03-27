@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://k44tu0keq5af"]
 
-[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_67hbe"]
-[ext_resource type="Texture2D" uid="uid://dfgyvm6hhyugs" path="res://codeBlocks/blockSprites/GenericBlock.png" id="2_js6f4"]
-[ext_resource type="Script" uid="uid://cg31bk3e65llc" path="res://codeBlocks/block_sprite.gd" id="3_js6f4"]
+[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_jl6ti"]
+[ext_resource type="Texture2D" uid="uid://dfgyvm6hhyugs" path="res://codeBlocks/blockSprites/GenericBlock.png" id="2_gbdc3"]
+[ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/clickable_area.gd" id="4_gbdc3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_js6f4"]
 radius = 24.3311
@@ -16,13 +16,12 @@ radius = 24.7386
 [sub_resource type="CircleShape2D" id="CircleShape2D_5nf5k"]
 radius = 23.0868
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_67hbe")
+[node name="GenericCodeBlock" type="CharacterBody2D"]
+script = ExtResource("1_jl6ti")
 
 [node name="blockSprite" type="Sprite2D" parent="."]
 position = Vector2(1, 37)
-texture = ExtResource("2_js6f4")
-script = ExtResource("3_js6f4")
+texture = ExtResource("2_gbdc3")
 
 [node name="leftConnector" type="CollisionShape2D" parent="."]
 position = Vector2(-213, -3)
@@ -39,3 +38,9 @@ shape = SubResource("CircleShape2D_2kxba")
 [node name="rightConnector" type="CollisionShape2D" parent="."]
 position = Vector2(222, -3)
 shape = SubResource("CircleShape2D_5nf5k")
+
+[node name="ClickableArea" type="Area2D" parent="."]
+script = ExtResource("4_gbdc3")
+
+[node name="ClickableAreaPolygon" type="CollisionPolygon2D" parent="ClickableArea"]
+polygon = PackedVector2Array(236, -42, -119, -40, -135, -15, -154, -14, -167, -38, -201, -41, -202, -23, -216, -25, -233, -11, -233, 2, -214, 20, -202, 19, -201, 34, -166, 35, -166, 48, -152, 63, -136, 65, -120, 48, -123, 37, 234, 34, 234, 17, 208, 4, 208, -8, 221, -25, 231, -25)

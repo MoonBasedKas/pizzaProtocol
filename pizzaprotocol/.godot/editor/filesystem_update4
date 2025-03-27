@@ -1,2 +1,6 @@
-res://codeBlocks/block.tscn
 res://scenes/codeMenu.tscn
+res://codeBlocks/block.tscn
+res://codeBlocks/GenericCodeBlock.tscn
+res://codeBlocks/block_sprite.gd
+res://codeBlocks/clickable_area.gd
+res://blockBehavior.gd

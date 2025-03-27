@@ -1,8 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqcoknf12ki0m"]
 
-[ext_resource type="PackedScene" uid="uid://k44tu0keq5af" path="res://codeBlocks/block.tscn" id="1_v6n8u"]
+[ext_resource type="PackedScene" uid="uid://k44tu0keq5af" path="res://codeBlocks/GenericCodeBlock.tscn" id="1_v6n8u"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_v6n8u")]
-position = Vector2(428, 233)
+[node name="GenericCodeBlock" parent="." instance=ExtResource("1_v6n8u")]
+position = Vector2(484, 215)
+
+[node name="GenericCodeBlock2" parent="." instance=ExtResource("1_v6n8u")]
+position = Vector2(763, 358)
