@@ -1,4 +1,3 @@
 res://scenes/codeMenu.tscn
 res://codeBlocks/GenericCodeBlock.tscn
-res://codeBlocks/overlap_prevention.gd
-res://blockBehavior.gd
+res://scenes/camera_2d.gd
