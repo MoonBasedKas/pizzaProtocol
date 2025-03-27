@@ -4,6 +4,15 @@
 
 [node name="Node2D" type="Node2D"]
 
+[node name="GenericCodeBlock5" parent="." instance=ExtResource("1_v6n8u")]
+position = Vector2(451, 541)
+
+[node name="GenericCodeBlock4" parent="." instance=ExtResource("1_v6n8u")]
+position = Vector2(968, 430)
+
+[node name="GenericCodeBlock3" parent="." instance=ExtResource("1_v6n8u")]
+position = Vector2(278, 372)
+
 [node name="GenericCodeBlock" parent="." instance=ExtResource("1_v6n8u")]
 position = Vector2(484, 215)
 
