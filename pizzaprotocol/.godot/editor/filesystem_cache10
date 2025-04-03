@@ -1,8 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1743697167
+::res://::1743699567
 blockBehavior.gd::GDScript/GDScript::3752243261837353500::1743100299::0::1::::<>CharacterBody2D<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3345684727294760819::1739900195::1742921135::1::::<><><>0<>0<>f0fd4b0c1776821820d30174ed5369b9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-Interpreter.gd::GDScript::380805642105655147::1743697167::0::1::::<>Node<><>0<>0<><>::
+Interpreter.gd::GDScript::380805642105655147::1743697933::0::1::::<>Node<><>0<>0<><>::
+player.tscn::PackedScene::1418107244571882794::1743699719::0::1::::<><><>0<>0<><>::
 ::res://codeBlocks/::1743697189
 blockConnector.gd::GDScript/GDScript::204221271739454258::1743093597::0::1::::<>Area2D<><>0<>0<><>::
 block_sprite.gd::GDScript/GDScript::5253358002646288516::1743089780::0::1::::<>Sprite2D<><>0<>0<><>::
@@ -11,8 +12,11 @@ GenericCodeBlock.tscn::PackedScene/PackedScene::763551203669954237::1743111098::
 overlap_prevention.gd::GDScript/GDScript::349930496090824546::1743100000::0::1::::<>CollisionShape2D<><>0<>0<><>::
 ::res://codeBlocks/blockSprites/::1742937698
 GenericBlock.png::CompressedTexture2D/CompressedTexture2D::7524087923789729278::1742937676::1742937698::1::::<><><>0<>0<>ea438239241fb77eace67e0261301168<>res://.godot/imported/GenericBlock.png-c4dea95696e5da85c4e1abeac2053bf4.ctex::
-::res://codeBlocks/codeObjects/::1743697189
-start.gd::GDScript::6573017067559327584::1743697369::0::1::::<>Node<><>0<>0<><>::
-::res://scenes/::1743697167
+::res://codeBlocks/codeObjects/::1743698785
+Move.gd::GDScript::2088201246641880318::1743698462::0::1::::<>Node<><>0<>0<><>::
+Start.gd::GDScript::6573017067559327584::1743698363::0::1::::<>Node<><>0<>0<><>::
+TurnLeft.gd::GDScript::6998978992057472854::1743698738::0::1::::<>Node<><>0<>0<><>::
+TurnRight.gd::GDScript::8722354815309733086::1743698785::0::1::::<>Node<><>0<>0<><>::
+::res://scenes/::1743698820
 camera_2d.gd::GDScript/GDScript::6206364736257507878::1743102652::0::1::::<>Camera2D<><>0<>0<><>::
-codeMenu.tscn::PackedScene::5900860208685998462::1743697369::0::1::::<><><>0<>0<><>::uid://k44tu0keq5af::::res://codeBlocks/GenericCodeBlock.tscn<>uid://cuon6kbfxo6sg::::res://scenes/camera_2d.gd
+codeMenu.tscn::PackedScene::5900860208685998462::1743698820::0::1::::<><><>0<>0<><>::uid://k44tu0keq5af::::res://codeBlocks/GenericCodeBlock.tscn<>uid://cuon6kbfxo6sg::::res://scenes/camera_2d.gd

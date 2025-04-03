@@ -1,7 +1,4 @@
+res://scenes/player.tscn
+res://scenes/player.gd
 res://scenes/codeMenu.tscn
-res://Interpreter.gd
-res://codeBlocks/codeObjects/start.gd
-res://codeBlocks/codeObjects/Start.gd
-res://codeBlocks/codeObjects/Move.gd
-res://codeBlocks/codeObjects/TurnLeft.gd
-res://codeBlocks/codeObjects/TurnRight.gd
+res://codeBlocks/GenericCodeBlock.tscn
