@@ -1,3 +1,7 @@
 res://scenes/codeMenu.tscn
-res://codeBlocks/GenericCodeBlock.tscn
-res://scenes/camera_2d.gd
+res://Interpreter.gd
+res://codeBlocks/codeObjects/start.gd
+res://codeBlocks/codeObjects/Start.gd
+res://codeBlocks/codeObjects/Move.gd
+res://codeBlocks/codeObjects/TurnLeft.gd
+res://codeBlocks/codeObjects/TurnRight.gd
