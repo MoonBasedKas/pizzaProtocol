@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqcoknf12ki0m"]
 
-[ext_resource type="PackedScene" uid="uid://k44tu0keq5af" path="res://codeBlocks/GenericCodeBlock.tscn" id="1_v6n8u"]
+[ext_resource type="PackedScene" uid="uid://k44tu0keq5af" path="res://codeBlocks/codeFolder/GenericCodeBlock.tscn" id="1_v6n8u"]
 [ext_resource type="Script" uid="uid://cuon6kbfxo6sg" path="res://scenes/camera_2d.gd" id="2_3c773"]
 
 [node name="Node2D" type="Node2D"]
