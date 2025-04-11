@@ -1,2 +1,2 @@
 res://scenes/codeMenu.tscn
-res://codeBlocks/codeFolder/MoveBlock.tscn
+res://scenes/code_menu.gd

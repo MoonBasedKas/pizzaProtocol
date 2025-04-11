@@ -1,4 +1,6 @@
-extends Node
+extends instruction
+
+class_name start
 
 var instructionType = "Start"
 var instructions = []

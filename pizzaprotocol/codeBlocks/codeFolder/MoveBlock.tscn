@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://fikt5hims8vk"]
 
-[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_fnbph"]
+[ext_resource type="Script" uid="uid://ch8gypr7rmcav" path="res://codeBlocks/codeFolder/blockBodyCode/MoveBlockScript.gd" id="1_fnbph"]
 [ext_resource type="Texture2D" uid="uid://c6om30idm7mhx" path="res://codeBlocks/blockSprites/moveBlock.png" id="2_fnbph"]
-[ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/clickable_area.gd" id="3_vkr6u"]
-[ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockConnector.gd" id="4_n8nx2"]
-[ext_resource type="Script" uid="uid://e8rkluec72kc" path="res://codeBlocks/overlap_prevention.gd" id="5_phhx8"]
+[ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/blockSharedScripts/clickable_area.gd" id="3_vkr6u"]
+[ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockSharedScripts/blockConnector.gd" id="4_n8nx2"]
+[ext_resource type="Script" uid="uid://e8rkluec72kc" path="res://codeBlocks/blockSharedScripts/overlap_prevention.gd" id="5_phhx8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5nf5k"]
 radius = 23.0868
@@ -18,7 +18,7 @@ radius = 24.7386
 [sub_resource type="CircleShape2D" id="CircleShape2D_a82ns"]
 radius = 15.0
 
-[node name="GenericCodeBlock" type="CharacterBody2D"]
+[node name="MoveCodeBlock" type="CharacterBody2D"]
 script = ExtResource("1_fnbph")
 
 [node name="blockSprite" type="Sprite2D" parent="."]

@@ -1,24 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqcoknf12ki0m"]
+[gd_scene load_steps=4 format=3 uid="uid://cqcoknf12ki0m"]
 
-[ext_resource type="PackedScene" uid="uid://k44tu0keq5af" path="res://codeBlocks/codeFolder/GenericCodeBlock.tscn" id="1_v6n8u"]
+[ext_resource type="Script" uid="uid://cabujkcexo7ic" path="res://scenes/code_menu.gd" id="1_vtdg0"]
 [ext_resource type="Script" uid="uid://cuon6kbfxo6sg" path="res://scenes/camera_2d.gd" id="2_3c773"]
+[ext_resource type="PackedScene" uid="uid://fikt5hims8vk" path="res://codeBlocks/codeFolder/MoveBlock.tscn" id="3_vtdg0"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="GenericCodeBlock5" parent="." instance=ExtResource("1_v6n8u")]
-position = Vector2(-328, -32)
-
-[node name="GenericCodeBlock4" parent="." instance=ExtResource("1_v6n8u")]
-position = Vector2(-290, 133)
-
-[node name="GenericCodeBlock3" parent="." instance=ExtResource("1_v6n8u")]
-position = Vector2(-227, -204)
-
-[node name="GenericCodeBlock" parent="." instance=ExtResource("1_v6n8u")]
-position = Vector2(244, -90)
-
-[node name="GenericCodeBlock2" parent="." instance=ExtResource("1_v6n8u")]
-position = Vector2(244, 187)
+script = ExtResource("1_vtdg0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_3c773")
+
+[node name="MoveCodeBlock" parent="." instance=ExtResource("3_vtdg0")]
+position = Vector2(-71, -106)
