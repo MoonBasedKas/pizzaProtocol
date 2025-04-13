@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqcoknf12ki0m"]
 
 [ext_resource type="Script" uid="uid://cabujkcexo7ic" path="res://scenes/code_menu.gd" id="1_vtdg0"]
-[ext_resource type="Script" uid="uid://cuon6kbfxo6sg" path="res://scenes/camera_2d.gd" id="2_3c773"]
+[ext_resource type="PackedScene" uid="uid://brmpyo72oggu8" path="res://scenes/CodeCamera.tscn" id="3_qm7gu"]
 [ext_resource type="PackedScene" uid="uid://fikt5hims8vk" path="res://codeBlocks/codeFolder/MoveBlock.tscn" id="3_vtdg0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="CodeEditor" type="Node2D"]
 script = ExtResource("1_vtdg0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_3c773")
-
 [node name="MoveCodeBlock" parent="." instance=ExtResource("3_vtdg0")]
-position = Vector2(-71, -106)
+position = Vector2(235, -155)
+
+[node name="Camera2D" parent="." instance=ExtResource("3_qm7gu")]

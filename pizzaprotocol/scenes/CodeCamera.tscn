@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://brmpyo72oggu8"]
+
+[ext_resource type="Script" uid="uid://cuon6kbfxo6sg" path="res://scenes/camera_2d.gd" id="1_0urjh"]
+[ext_resource type="PackedScene" uid="uid://cp2d0cfrhatdg" path="res://HUD/editorHud.tscn" id="1_t33ga"]
+[ext_resource type="PackedScene" uid="uid://dng1x6661fg8s" path="res://scenes/CodeBlocks.tscn" id="3_jn1ig"]
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_0urjh")
+
+[node name="Special Settings" parent="." instance=ExtResource("1_t33ga")]
+offset = Vector2(-958.495, 0)
+transform = Transform2D(1, 0, 0, 1, -958.495, 0)
+
+[node name="CodeBlocks" parent="." instance=ExtResource("3_jn1ig")]

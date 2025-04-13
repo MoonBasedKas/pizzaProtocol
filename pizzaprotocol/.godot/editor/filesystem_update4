@@ -1,2 +1,6 @@
 res://scenes/codeMenu.tscn
-res://scenes/code_menu.gd
+res://codeBlocks/codeFolder/GenericCodeBlock.tscn
+res://HUD/editorHud.tscn
+res://scenes/CodeCamera.tscn
+res://scenes/CodeBlocks.tscn
+res://BlockContainer.gd

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dng1x6661fg8s"]
+
+[ext_resource type="Script" uid="uid://dy5dqvymim51e" path="res://BlockContainer.gd" id="1_jvvul"]
+[ext_resource type="Texture2D" uid="uid://c6om30idm7mhx" path="res://codeBlocks/blockSprites/moveBlock.png" id="1_o27lk"]
+[ext_resource type="Texture2D" uid="uid://dxr8c8ge7tixg" path="res://codeBlocks/blockSprites/startBlock.png" id="2_abhwp"]
+[ext_resource type="Texture2D" uid="uid://fddi4i60lopj" path="res://codeBlocks/blockSprites/turnLeftBlock.png" id="3_jvvul"]
+[ext_resource type="Texture2D" uid="uid://7qt7j1e0npmv" path="res://codeBlocks/blockSprites/turnRightBlock.png" id="4_vswnm"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 80.0
+scale = Vector2(2.48278, 16.1745)
+color = Color(0.080744, 0.0499129, 0.0159603, 1)
+
+[node name="blockContainer" type="Node2D" parent="."]
+script = ExtResource("1_jvvul")
+
+[node name="MoveBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(49, 112)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_o27lk")
+
+[node name="StartBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(49, 76)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_abhwp")
+
+[node name="TurnLeftBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(49, 149)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_jvvul")
+
+[node name="TurnRightBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(50, 188)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_vswnm")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = -28.0
+offset_right = 40.0
+offset_bottom = -24.0
+scale = Vector2(2.48278, 16.1745)
+color = Color(0.0577639, 0.141141, 0.0622991, 1)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 98.0
+offset_bottom = 35.0
+text = "Blocks"
+editable = false

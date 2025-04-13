@@ -1,8 +1,12 @@
+TextEdit
+Node2D
+Node
+ColorRect
+CanvasLayer
+Camera2D
 CollisionPolygon2D
 Button
-CanvasLayer
 CollisionShape2D
 Sprite2D
 CharacterBody2D
-Camera2D
 Area2D
