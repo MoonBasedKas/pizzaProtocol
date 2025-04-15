@@ -12,6 +12,6 @@ func _mouse_exit():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("click") && inside:
-		print("CLICKED")
+		ProgramData.startExec()
 	elif Input.is_action_just_released("click"):
 		clicked = false

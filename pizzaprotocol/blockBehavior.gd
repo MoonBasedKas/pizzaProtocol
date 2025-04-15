@@ -77,3 +77,6 @@ func exportBlock(allowed, genBlock):
 	var ins = instruction.new()
 	ins.bindParams(params)	
 	return [ins, bottom]
+	
+func getBelow():
+	return bottom

@@ -8,4 +8,4 @@ func _physics_process(delta: float) -> void:
 
 
 func returnSelf():
-	return 0
+	return turnLeft.new()

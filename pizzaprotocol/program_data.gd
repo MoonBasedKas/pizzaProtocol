@@ -4,6 +4,19 @@ class_name program_data
 
 
 var creation_queue = []
+var exec = false
+
+## Disables execution
+func stopExec():
+	exec = false
+
+## Sets our exec to true.
+func startExec():
+	exec = true
+	
+## Returns if we are ready to begin wrapping for execution
+func getExec():
+	return exec
 
 ## Adds a new item to the queue.
 func addQueue(name):

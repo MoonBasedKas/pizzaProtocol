@@ -6,3 +6,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	self.doPhysics(delta)
+
+
+func returnSelf():
+	return move.new()
