@@ -5,7 +5,7 @@ class_name codeMenu
 var blocks = []
 var funcs = []
 var start = null
-var loc : String = ""
+var startBlock = false
 
 
 func _ready():
@@ -35,10 +35,11 @@ func blockAlc(new):
 
 func determineNode(name):
 	var new = null
-	if name == "StartBlock" and start == null:
+	if name == "StartBlock" and not startBlock:
 		new = preload("res://codeBlocks/codeFolder/StartBlock.tscn")
 		new = blockAlc(new)
 		start = new
+		startBlock = true
 		
 	if name == "MoveBlock":
 		new = preload("res://codeBlocks/codeFolder/MoveBlock.tscn")
@@ -54,4 +55,9 @@ func determineNode(name):
 		new = preload("res://codeBlocks/codeFolder/TurnRight.tscn")
 		new = blockAlc(new)
 		start = new
+		
+		
+	if new != null:
+		new.position = get_node("Camera2D").position
+		
 	
