@@ -3,6 +3,8 @@ extends Node
 ## Player object
 var player = null
 
+var speed = 0.5
+
 ## Start point of where to execute from
 var startPoint = []
 ## Each function that is callable.
@@ -17,16 +19,9 @@ func execute():
 	var vars = {}
 	var temp = null
 	for ins in instructions:
+		await get_tree().create_timer(speed).timeout
 		ins.exec(self, vars)
-		# Function calls without variables, variables will handle it differently.
-		#if ins.instructionType == "FunctionCall":
-			#temp = self.functions.get(ins.Name ,null)
-			#if temp != null:
-				#execFunction(self.functions[ins.Name])
-			#else:
-				#raiseError()
-		#else:
-			#ins.exec(self, vars) 
+		
 	
 	
 	pass

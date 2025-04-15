@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 var unitV = Vector2(0,-1)
+var speed = 10000
 var rot = 0
+var exec = true
 
 ## Debug process for car movement
 func _physics_process(delta):
-	var exec = true
+
 	if not exec:
 		pass
 	elif Input.is_action_just_pressed("scroll_Up"):
@@ -18,7 +20,7 @@ func _physics_process(delta):
 
 ## moves the player forward
 func move():
-	velocity = Vector2(1000,1000) * unitV
+	velocity = Vector2(speed,speed) * unitV
 	move_and_slide()
 
 ## turns the player object left by 90
