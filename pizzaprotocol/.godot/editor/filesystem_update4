@@ -1,6 +1,7 @@
-res://scenes/codeMenu.tscn
-res://codeBlocks/codeFolder/GenericCodeBlock.tscn
-res://HUD/editorHud.tscn
-res://scenes/CodeCamera.tscn
+res://program_data.gd
 res://scenes/CodeBlocks.tscn
-res://BlockContainer.gd
+res://creationNode.gd
+res://scenes/codeMenu.tscn
+res://scenes/CodeCamera.tscn
+res://scenes/code_menu.gd
+res://codeBlocks/codeFolder/StartBlock.tscn
