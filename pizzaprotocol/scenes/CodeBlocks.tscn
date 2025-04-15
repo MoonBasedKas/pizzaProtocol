@@ -10,8 +10,9 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 80.0
+offset_left = -33.0
+offset_right = 20.0
+offset_bottom = 549.0
 scale = Vector2(2.48278, 16.1745)
 color = Color(0.080744, 0.0499129, 0.0159603, 1)
 
