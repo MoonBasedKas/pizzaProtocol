@@ -12,22 +12,21 @@ var variables = {}
 
 ## Begins program execution.
 func execute():
+	print(startPoint)
 	var instructions = startPoint
 	var vars = {}
 	var temp = null
 	for ins in instructions:
-		print(ins.name)
-	return 
-	for ins in instructions:
+		ins.exec(self, vars)
 		# Function calls without variables, variables will handle it differently.
-		if ins.instructionType == "FunctionCall":
-			temp = self.functions.get(ins.Name ,null)
-			if temp != null:
-				execFunction(self.functions[ins.Name])
-			else:
-				raiseError()
-		else:
-			ins.exec(self, vars) 
+		#if ins.instructionType == "FunctionCall":
+			#temp = self.functions.get(ins.Name ,null)
+			#if temp != null:
+				#execFunction(self.functions[ins.Name])
+			#else:
+				#raiseError()
+		#else:
+			#ins.exec(self, vars) 
 	
 	
 	pass
@@ -60,8 +59,8 @@ func createFunction(funcName):
 func printInstructions():
 	print(self.startPoint)
 	
-func setPlayer(player):
-	player = player
+func setPlayer(progPlayer):
+	player = progPlayer
 	
 func getPlayer():
 	return player

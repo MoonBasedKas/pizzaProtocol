@@ -9,4 +9,6 @@ func _physics_process(delta: float) -> void:
 
 
 func returnSelf():
-	return move.new()
+	var temp = move.new() 
+	print(temp)
+	return temp

@@ -17,3 +17,6 @@ res://blockBehavior.gd
 res://Interpreter.gd
 res://codeBlocks/blockSharedScripts/overlap_prevention.gd
 res://scenes/level1.tscn
+res://scenes/level_1.gd
+res://scenes/level_container.gd
+res://codeBlocks/codeExec/TurnRight.gd

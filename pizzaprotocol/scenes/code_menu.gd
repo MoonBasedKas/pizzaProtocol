@@ -7,6 +7,8 @@ var funcs = []
 var start = null
 var startBlock = false
 var compiled = false
+var readyToPause = false
+
 
 
 func _ready():
@@ -18,8 +20,9 @@ func _physics_process(delta: float) -> void:
 		if not compiled:
 			compileBlocks()
 			compiled = true
+			readyToPause = true
 #		BEGIN THE GAUNTLET! WILL SWAP SCENES!
-		Interpreter.execute()
+		#Interpreter.execute()
 		pass
 	else:
 		createNodes()
@@ -80,6 +83,6 @@ func compileBlocks():
 func getBlocks(head, name):
 	var temp = head
 	while head != null:
-		Interpreter.addInstruction(head, name)
+		Interpreter.addInstruction(head.returnSelf(), name)
 		head = head.getBelow()
 	return 0
