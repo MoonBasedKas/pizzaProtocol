@@ -1,0 +1,118 @@
+# Pizza protocol
+## Intro
+Pizza protocol is a game that is meant to help learning programming by providing various 
+programming puzzles and translating them into a scenario that is easier to imagine. Currently 
+the game mainly focuses on navigating 2d worlds however, the game should be easy to extend 
+to many other sitautions that could be useful for a user.
+
+## How does the game work?
+The game works in a 3 tier system
+1. Code editor
+2. Code compilation
+3. Code execution
+
+Steps 1 and 3 happen in front of the player while 2 is the intermediary step. Each block 
+will translate into something in compilation that is a new object that is used 
+during execution. For example a move block will turn into a move object which 
+executes some command during code execution.
+
+This information is kept track of and ran in an interpreter class. This class holds 
+onto a series of instructions which each have an exec method. Calling this method 
+will cause it to perform its activity. For example, the move class will call 
+the move method on the car causing it to move forward.
+
+The class is purely named interpreter because the original idea was that it'd work more 
+like an interpreter but a problem with interpreting block based code is we need to know 
+what blocks of code are actually meant to be executed. This requires some level 
+of compiling however, this compiler currently does not have much real error checking.
+
+## How does the programming language work?
+The language known as pizza byte, works much like any block based langauge where you drag blocks 
+such that they are connecting. We use these connections to know the order of operations and 
+the flow of the program.
+
+- Start block
+    - Acts as the main function of any program. Tells us where to start executing from.
+- Move block
+    - Moves the player object forward by a single unit: length of single tile.
+- Turn left/right block
+    - Turns the player 90 degrees in the way their block says.
+
+More to be added
+
+
+
+## How do you add more blocks to the game?
+This method isn't too hard as the idea when doing this was to abstract most of that into a singular 
+class that is inherited for both blocks and the code object. You'll need to inherit the [BLOCK] and 
+[INSTRUCTION] classes with a new object. The only problem is that there is a lot of tedious steps.
+
+### Making it spawn
+In the code editor menu you will need to add the blocks sprite there and attach a script to it.
+This script will only notify the program when its clicked and add that name into the creation queue. 
+You'll want to modify [CREATION] to actually make this block spawned. It'll follow the same format you see 
+with the rest of the code there. Just call the function which creates the block.
+
+
+## Controls 
+Arrow keys - move your camera.
+, - Move code menu up.
+. - Move code Menu down.
+space - Start.
+- - zoom out.
+= - zoom in.
+
+Most of the controls of the game will be done via click.
+Creating blocks is done by clicking on the code menu which will spawn the center of the block 
+where your crosshair is.
+
+## Making a new level?
+For this you'll want to load the player object into the game upon level creation. As the player 
+object is tied to the interpreter object and is set to null by default. This is to let it be
+extended later by allowing for more unique situations. Perhaps you're in a pizza factory rather 
+than a car, the player object would be functionally different. Each level should have its own 
+code editor object and then a level container object. The level container object will 
+be by default invisible and all hitboxes between the two will be on different levels. This is 
+to prevent them from colliding with eachother.
+
+## Why is drag and drop so jank?
+I haven't figured out a clean way to perform this or gotten around to it. There is a hitbox 
+to prevent code block overlap however, if a better implementation is ever done it will be updated. 
+The current problem is multiple blocks can be selected at once which causes them all to drag 
+originally letting go would cause them to merge together.
+
+If I was to fix this I would most likely just update the programData singleton to enforce selection 
+of one but doing this would remove multi-select and require a new implementation to support that.
+This is the main reason that prevents me from implementing a better drag and drop and a prototype 
+is a much higher priority.
+
+## How many levels does the game plan on having?
+3 seems like enough for a tech demo. These 3 levels will most likely focus on introducing 
+the player to the language, how to navigate, and the restriction system. The idea is that 
+using these systems we'd be able to teach the player different programming problems with 
+these in combination.
+
+Levels introduce:
+1. Basic syntax, hello world version of this language. Move forward once.
+2. Conditional statements using if. Make the correct decision on a turn where the right path is 
+randomly chosen.
+3. Large city navigation using if and while statements. User is limited to a singular move 
+instruction.
+
+Currently, we have 0/3
+
+## Sprite style
+All sprites are drawn on 32h x 32w canvases where h and w are an integer. This is to keep the art 
+simple and to accomodate our teams lack of skill with drawing. Each of these sprites is exported at a 
+scale factor of 5x. There are a few cases which ignore this or scale down the sprite.
+
+Crosshair - exported at 2x size at a 32x32 size.
+Code creation - Blocks are the regular one however they are shrunk down to their original 32x96 size.
+
+Tile maps are generally the largest of the blocks, but this is purely because of how tile maps work.
+Each tile on the map is still drawn to 32x32 and exported by a factor of 5.
+
+## Would the game's language receive more support beyond the game?
+This would be an interesting idea and would not be difficult to modify the project to perform 
+all the operations up to intermediate code generation. Luckily if someone else wishes to do this
+the games project will remain open source.
