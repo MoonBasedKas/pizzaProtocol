@@ -9,10 +9,10 @@
 config_version=5
 
 [application]
-
 config/name="PizzaProtocol"
-run/main_scene="uid://24bwf87la4hx"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="res://dialogue/level_intros/level1_intro.tscn"  # Updated path
+
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]

@@ -17,7 +17,7 @@ func execute():
 	print(startPoint)
 	var instructions = startPoint
 	var vars = {}
-	var temp = null
+	# var temp = null
 	for ins in instructions:
 		await get_tree().create_timer(speed).timeout
 		ins.exec(self, vars)
@@ -28,7 +28,7 @@ func execute():
 
 
 ## Begins execution of a specfic function.
-func execFunction(function):
+func execFunction(_function):
 	var instructions = startPoint.fetchInstructions()
 	var vars = {}
 	var ret = null
