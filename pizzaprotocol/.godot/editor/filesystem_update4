@@ -8,7 +8,3 @@ res://codeBlocks/codeFolder/TurnRight.tscn
 res://codeBlocks/codeFolder/GenericCodeBlock.tscn
 res://scenes/player.tscn
 res://codeBlocks/codeFolder/MoveBlock.tscn
-res://scenes/player.gd
-res://blockBehavior.gd
-res://scenes/WinTile.gd
-res://scenes/PlayerHitBody.gd
