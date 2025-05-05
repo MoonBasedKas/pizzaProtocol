@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ug7awd5fmo3k"]
+[gd_scene load_steps=8 format=3 uid="uid://ug7awd5fmo3k"]
 
 [ext_resource type="Script" uid="uid://cmxxacj0cxfg6" path="res://scenes/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bnww66cu72mdf" path="res://icon.svg" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://d6w2ypmko08a" path="res://scenes/DACI.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://drkmirtqsgpgg" path="res://scenes/PlayerHitBody.gd" id="3_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(122, 378)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(79, 179.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(130, 131)
+size = Vector2(700.5, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
+size = Vector2(596, 78)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -12,8 +22,45 @@ collision_mask = 2
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qhqgy")
+texture = ExtResource("2_g2els")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0.5)
+[node name="Hit" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_qhqgy")
+
+[node name="CarBody" type="CollisionShape2D" parent="Hit"]
+position = Vector2(1, -27)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="SenseFront" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="Front" type="CollisionShape2D" parent="SenseFront"]
+position = Vector2(1, -358.125)
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="SenseLeft" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="Left" type="CollisionShape2D" parent="SenseLeft"]
+position = Vector2(-418.75, -177.75)
 shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="SenseRight" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="Right" type="CollisionShape2D" parent="SenseRight"]
+position = Vector2(365, -177)
+shape = SubResource("RectangleShape2D_qlg0r")

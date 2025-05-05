@@ -1,3 +1,8 @@
+CollisionShape2D
+CollisionPolygon2D
+Area2D
+TileMapLayer
+TileMap
 Sprite2D
 Node2D
 TextEdit
@@ -5,8 +10,5 @@ Node
 ColorRect
 CanvasLayer
 Camera2D
-CollisionPolygon2D
 Button
-CollisionShape2D
 CharacterBody2D
-Area2D

@@ -36,28 +36,29 @@ func doPhysics(delta):
 # Gets the connections and their parents if there is a connection
 func getConnections():
 	var temp = null
-	if temp != null:
-		temp = get_node("top")
+	temp = get_node("top")
+	if temp != null and temp.has_method("getConnection"):
 		top = temp.getConnection()
-		if top != null:
+		if top != null and top.has_method("getParent"):
 			top = top.getParent()
 
 	temp = get_node("bottom")
-	if temp != null:
+	if temp != null and temp.has_method("getConnection"):
 		bottom = temp.getConnection()
-		if bottom != null:
+		if bottom != null and bottom.has_method("getParent"):
 			bottom = bottom.getParent()
 			
 	temp = get_node("left")
-	if temp != null:
+	if temp != null and temp.has_method("getConnection"):
 		left = temp.getConnection()
-		if left != null:
+		if left != null and left.has_method("getParent"):
 			left = left.getParent()
 			
 	temp = get_node("right")
-	if temp != null:
+
+	if temp != null and temp.has_method("getConnection"):
 		right = temp.getConnection()
-		if right != null:
+		if right != null and right.has_method("getParent"):
 			right = right.getParent()
 	return 0
 
