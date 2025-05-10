@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c25fyj26ue3x5"]
+[gd_scene load_steps=9 format=3 uid="uid://c25fyj26ue3x5"]
 
 [ext_resource type="Script" uid="uid://dhqf06w8x1afe" path="res://codeBlocks/codeFolder/blockBodyCode/LookLeftBlockScript.gd" id="1_nfarr"]
 [ext_resource type="Texture2D" uid="uid://dv86mh1up5qcv" path="res://codeBlocks/blockSprites/lookLeftBlock.png" id="2_nfarr"]
@@ -9,14 +9,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5nf5k"]
 radius = 23.0868
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jv7qk"]
-radius = 21.095
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2kxba"]
-radius = 24.7386
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_a82ns"]
 radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfarr"]
+radius = 24.3311
 
 [node name="LookLeftBlock" type="CharacterBody2D"]
 script = ExtResource("1_nfarr")
@@ -31,7 +28,7 @@ collision_mask = 2
 script = ExtResource("3_e62rm")
 
 [node name="ClickableAreaPolygon" type="CollisionPolygon2D" parent="ClickableArea"]
-polygon = PackedVector2Array(236, -42, -119, -40, -135, -15, -154, -14, -167, -38, -201, -41, -202, -23, -202, 19, -201, 34, -166, 35, -166, 48, -152, 63, -136, 65, -120, 48, -123, 37, 234, 34, 234, 17, 208, 4, 208, -8, 221, -25, 231, -25)
+polygon = PackedVector2Array(236, -42, -119, -40, -167, -38, -201, -41, -202, -25, -218, -24, -231, -10, -231, 6, -217, 17, -202, 19, -201, 34, -123, 37, 234, 34, 234, 17, 208, 4, 208, -8, 221, -25, 231, -25)
 
 [node name="right" type="Area2D" parent="."]
 script = ExtResource("4_u8wu1")
@@ -40,21 +37,14 @@ script = ExtResource("4_u8wu1")
 position = Vector2(222, -3)
 shape = SubResource("CircleShape2D_5nf5k")
 
-[node name="top" type="Area2D" parent="."]
-script = ExtResource("4_u8wu1")
-
-[node name="topConnector" type="CollisionShape2D" parent="top"]
-position = Vector2(-145, -31)
-shape = SubResource("CircleShape2D_jv7qk")
-
-[node name="bottom" type="Area2D" parent="."]
-script = ExtResource("4_u8wu1")
-
-[node name="bottomConnector" type="CollisionShape2D" parent="bottom"]
-position = Vector2(-144, 41)
-shape = SubResource("CircleShape2D_2kxba")
-
 [node name="OverlapPrevention" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_a82ns")
 script = ExtResource("5_paee8")
+
+[node name="left" type="Area2D" parent="."]
+script = ExtResource("4_u8wu1")
+
+[node name="leftConnector" type="CollisionShape2D" parent="left"]
+position = Vector2(-202, -3)
+shape = SubResource("CircleShape2D_nfarr")
