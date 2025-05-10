@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ca38r5pvis53s"]
 
-[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_3ibkr"]
+[ext_resource type="Script" uid="uid://bdt5wsjhxthek" path="res://codeBlocks/codeFolder/blockBodyCode/CustomInputBlockScript.gd" id="1_chg47"]
 [ext_resource type="Texture2D" uid="uid://b33ipl71oskxy" path="res://codeBlocks/blockSprites/customInputBlock.png" id="2_3ibkr"]
 [ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/blockSharedScripts/clickable_area.gd" id="3_0i04u"]
 [ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockSharedScripts/blockConnector.gd" id="4_vifub"]
@@ -16,7 +16,7 @@ radius = 23.0868
 radius = 15.0
 
 [node name="CustomInput" type="CharacterBody2D"]
-script = ExtResource("1_3ibkr")
+script = ExtResource("1_chg47")
 
 [node name="blockSprite" type="Sprite2D" parent="."]
 position = Vector2(1, 37)
@@ -43,12 +43,6 @@ script = ExtResource("4_vifub")
 [node name="rightConnector" type="CollisionShape2D" parent="right"]
 position = Vector2(222, -3)
 shape = SubResource("CircleShape2D_5nf5k")
-
-[node name="top" type="Area2D" parent="."]
-script = ExtResource("4_vifub")
-
-[node name="bottom" type="Area2D" parent="."]
-script = ExtResource("4_vifub")
 
 [node name="OverlapPrevention" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)

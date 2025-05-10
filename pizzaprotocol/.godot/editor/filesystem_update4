@@ -18,3 +18,5 @@ res://codeBlocks/codeFolder/IfBlock.tscn
 res://codeBlocks/codeFolder/TurnLeft.tscn
 res://codeBlocks/codeFolder/WhileBlock.tscn
 res://codeBlocks/codeFolder/TurnRight.tscn
+res://codeBlocks/codeExec/String.gd
+res://codeBlocks/codeFolder/blockBodyCode/CustomInputBlockScript.gd
