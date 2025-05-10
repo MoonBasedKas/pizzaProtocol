@@ -1,4 +1,4 @@
-extends Area2D
+extends sensor
 
 
 # TLDR we know its the player if this method exists.
