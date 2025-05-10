@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dng1x6661fg8s"]
+[gd_scene load_steps=16 format=3 uid="uid://dng1x6661fg8s"]
 
 [ext_resource type="Script" uid="uid://dy5dqvymim51e" path="res://BlockContainer.gd" id="1_jvvul"]
 [ext_resource type="Texture2D" uid="uid://c6om30idm7mhx" path="res://codeBlocks/blockSprites/moveBlock.png" id="1_o27lk"]
@@ -6,6 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://fddi4i60lopj" path="res://codeBlocks/blockSprites/turnLeftBlock.png" id="3_jvvul"]
 [ext_resource type="Script" uid="uid://b4mqskm61l8lq" path="res://creationNode.gd" id="3_vswnm"]
 [ext_resource type="Texture2D" uid="uid://7qt7j1e0npmv" path="res://codeBlocks/blockSprites/turnRightBlock.png" id="4_vswnm"]
+[ext_resource type="Texture2D" uid="uid://cxepjvjh7u11t" path="res://codeBlocks/blockSprites/enIfBlock.png" id="7_t5fhe"]
+[ext_resource type="Texture2D" uid="uid://c82l8gl1w571k" path="res://codeBlocks/blockSprites/IfBlock.png" id="8_65a31"]
+[ext_resource type="Texture2D" uid="uid://b33ipl71oskxy" path="res://codeBlocks/blockSprites/customInputBlock.png" id="9_65a31"]
+[ext_resource type="Texture2D" uid="uid://bbgrprfj3xp3k" path="res://codeBlocks/blockSprites/lookFrontBlock.png" id="10_m5iag"]
+[ext_resource type="Texture2D" uid="uid://dv86mh1up5qcv" path="res://codeBlocks/blockSprites/lookLeftBlock.png" id="11_w6c4m"]
+[ext_resource type="Texture2D" uid="uid://fsrfdqldb1xg" path="res://codeBlocks/blockSprites/lookRightBlock.png" id="12_0udwp"]
+[ext_resource type="Texture2D" uid="uid://bp4l6h01nwgkp" path="res://codeBlocks/blockSprites/whileBlock.png" id="13_0udwp"]
+[ext_resource type="Texture2D" uid="uid://u76yo00emd08" path="res://codeBlocks/blockSprites/endWhileBlock.png" id="14_f3l2a"]
+[ext_resource type="Texture2D" uid="uid://b23uinoqy0a1g" path="res://codeBlocks/blockSprites/eqBlock.png" id="15_f3l2a"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -32,15 +41,69 @@ texture = ExtResource("2_abhwp")
 script = ExtResource("3_vswnm")
 
 [node name="TurnLeftBlock" type="Sprite2D" parent="blockContainer"]
-position = Vector2(49, 149)
+position = Vector2(47, 239)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_jvvul")
 script = ExtResource("3_vswnm")
 
 [node name="TurnRightBlock" type="Sprite2D" parent="blockContainer"]
-position = Vector2(50, 188)
+position = Vector2(48, 278)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_vswnm")
+script = ExtResource("3_vswnm")
+
+[node name="EndIfBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(47, 379)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_t5fhe")
+script = ExtResource("3_vswnm")
+
+[node name="IfBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(48, 343)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_65a31")
+script = ExtResource("3_vswnm")
+
+[node name="CustomInputBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(49, 310)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_65a31")
+script = ExtResource("3_vswnm")
+
+[node name="LookFrontBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(50, 145)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_m5iag")
+script = ExtResource("3_vswnm")
+
+[node name="LookLeftBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(49, 177)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_w6c4m")
+script = ExtResource("3_vswnm")
+
+[node name="LookRightBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(49, 208)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_0udwp")
+script = ExtResource("3_vswnm")
+
+[node name="WhileBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(51, 413)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_0udwp")
+script = ExtResource("3_vswnm")
+
+[node name="EndWhileBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(50, 447)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_f3l2a")
+script = ExtResource("3_vswnm")
+
+[node name="EqBlock" type="Sprite2D" parent="blockContainer"]
+position = Vector2(50.0001, 482)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_f3l2a")
 script = ExtResource("3_vswnm")
 
 [node name="ColorRect2" type="ColorRect" parent="."]

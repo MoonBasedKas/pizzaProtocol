@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://1ekie6vgqsg7"]
+
+[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_78js0"]
+[ext_resource type="Texture2D" uid="uid://b23uinoqy0a1g" path="res://codeBlocks/blockSprites/eqBlock.png" id="2_78js0"]
+[ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/blockSharedScripts/clickable_area.gd" id="3_ubb1y"]
+[ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockSharedScripts/blockConnector.gd" id="4_o0pdl"]
+[ext_resource type="Script" uid="uid://e8rkluec72kc" path="res://codeBlocks/blockSharedScripts/overlap_prevention.gd" id="5_c8h0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_js6f4"]
+radius = 24.3311
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5nf5k"]
+radius = 23.0868
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a82ns"]
+radius = 15.0
+
+[node name="Equal" type="CharacterBody2D"]
+script = ExtResource("1_78js0")
+
+[node name="blockSprite" type="Sprite2D" parent="."]
+position = Vector2(150, 37)
+texture = ExtResource("2_78js0")
+
+[node name="ClickableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_ubb1y")
+
+[node name="ClickableAreaPolygon" type="CollisionPolygon2D" parent="ClickableArea"]
+position = Vector2(145, 0)
+polygon = PackedVector2Array(-83, -41, -201, -41, -202, -23, -216, -25, -233, -11, -233, 2, -214, 20, -202, 19, -201, 34, -80, 32, -83, 19, -108, 0, -107, -11, -100, -20, -82, -23)
+
+[node name="left" type="Area2D" parent="."]
+script = ExtResource("4_o0pdl")
+
+[node name="leftConnector" type="CollisionShape2D" parent="left"]
+position = Vector2(-70, -4)
+shape = SubResource("CircleShape2D_js6f4")
+
+[node name="right" type="Area2D" parent="."]
+script = ExtResource("4_o0pdl")
+
+[node name="rightConnector" type="CollisionShape2D" parent="right"]
+position = Vector2(59, -2)
+shape = SubResource("CircleShape2D_5nf5k")
+
+[node name="top" type="Area2D" parent="."]
+script = ExtResource("4_o0pdl")
+
+[node name="bottom" type="Area2D" parent="."]
+script = ExtResource("4_o0pdl")
+
+[node name="OverlapPrevention" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_a82ns")
+script = ExtResource("5_c8h0f")

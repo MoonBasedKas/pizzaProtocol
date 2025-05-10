@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://vvqoj0vyo5aj"]
+
+[ext_resource type="Script" uid="uid://ch8gypr7rmcav" path="res://codeBlocks/codeFolder/blockBodyCode/MoveBlockScript.gd" id="1_p2xbd"]
+[ext_resource type="Texture2D" uid="uid://fsrfdqldb1xg" path="res://codeBlocks/blockSprites/lookRightBlock.png" id="2_p2xbd"]
+[ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/blockSharedScripts/clickable_area.gd" id="3_clbh7"]
+[ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockSharedScripts/blockConnector.gd" id="4_dkkoy"]
+[ext_resource type="Script" uid="uid://e8rkluec72kc" path="res://codeBlocks/blockSharedScripts/overlap_prevention.gd" id="5_wudwo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5nf5k"]
+radius = 23.0868
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jv7qk"]
+radius = 21.095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2kxba"]
+radius = 24.7386
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a82ns"]
+radius = 15.0
+
+[node name="MoveCodeBlock" type="CharacterBody2D"]
+script = ExtResource("1_p2xbd")
+
+[node name="blockSprite" type="Sprite2D" parent="."]
+position = Vector2(1, 37)
+texture = ExtResource("2_p2xbd")
+
+[node name="ClickableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_clbh7")
+
+[node name="ClickableAreaPolygon" type="CollisionPolygon2D" parent="ClickableArea"]
+polygon = PackedVector2Array(236, -42, -119, -40, -135, -15, -154, -14, -167, -38, -201, -41, -202, -23, -202, 19, -201, 34, -166, 35, -166, 48, -152, 63, -136, 65, -120, 48, -123, 37, 234, 34, 234, 17, 208, 4, 208, -8, 221, -25, 231, -25)
+
+[node name="right" type="Area2D" parent="."]
+script = ExtResource("4_dkkoy")
+
+[node name="rightConnector" type="CollisionShape2D" parent="right"]
+position = Vector2(222, -3)
+shape = SubResource("CircleShape2D_5nf5k")
+
+[node name="top" type="Area2D" parent="."]
+script = ExtResource("4_dkkoy")
+
+[node name="topConnector" type="CollisionShape2D" parent="top"]
+position = Vector2(-145, -31)
+shape = SubResource("CircleShape2D_jv7qk")
+
+[node name="bottom" type="Area2D" parent="."]
+script = ExtResource("4_dkkoy")
+
+[node name="bottomConnector" type="CollisionShape2D" parent="bottom"]
+position = Vector2(-144, 41)
+shape = SubResource("CircleShape2D_2kxba")
+
+[node name="OverlapPrevention" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_a82ns")
+script = ExtResource("5_wudwo")

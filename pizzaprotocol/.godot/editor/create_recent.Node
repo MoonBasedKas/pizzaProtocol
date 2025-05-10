@@ -1,3 +1,5 @@
+LineEdit
+TextEdit
 CollisionShape2D
 CollisionPolygon2D
 Area2D
@@ -5,7 +7,6 @@ TileMapLayer
 TileMap
 Sprite2D
 Node2D
-TextEdit
 Node
 ColorRect
 CanvasLayer

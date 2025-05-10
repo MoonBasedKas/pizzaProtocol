@@ -63,7 +63,42 @@ func determineNode(name):
 	if name == "TurnRightBlock":
 		new = preload("res://codeBlocks/codeFolder/TurnRight.tscn")
 		new = blockAlc(new)
+	
+	if name == "IfBlock":
+		new = preload("res://codeBlocks/codeFolder/IfBlock.tscn")
+		new = blockAlc(new)
+	
+	if name == "EndIfBlock":
+		new = preload("res://codeBlocks/codeFolder/EndIfBlock.tscn")
+		new = blockAlc(new)
 		
+	if name == "CustomInputBlock":
+		new = preload("res://codeBlocks/codeFolder/CustomInputBlock.tscn")
+		new = blockAlc(new)
+		
+	if name == "LookFrontBlock":
+		new = preload("res://codeBlocks/codeFolder/LookFront.tscn")
+		new = blockAlc(new)
+		
+	if name == "LookLeftBlock":
+		new = preload("res://codeBlocks/codeFolder/LookLeft.tscn")
+		new = blockAlc(new)
+		
+	if name == "LookRightBlock":
+		new = preload("res://codeBlocks/codeFolder/LookRight.tscn")
+		new = blockAlc(new)
+		
+	if name == "WhileBlock":
+		new = preload("res://codeBlocks/codeFolder/WhileBlock.tscn")
+		new = blockAlc(new)
+		
+	if name == "EndWhileBlock":
+		new = preload("res://codeBlocks/codeFolder/EndWhileBlock.tscn")
+		new = blockAlc(new)
+		
+	if name == "EqBlock":
+		new = preload("res://codeBlocks/codeFolder/EqualBlock.tscn")
+		new = blockAlc(new)
 		
 	if new != null:
 		new.position = get_node("Camera2D").position
