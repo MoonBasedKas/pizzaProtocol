@@ -49,7 +49,7 @@ func right():
 	pass
 	
 ## Senses the road to the right.
-func senseFront():
+func lookFront():
 	var sen = sensorFront.sense()
 	var tileOn = body.sense()
 	if sen == tileOn:
@@ -57,7 +57,7 @@ func senseFront():
 	return sen
 
 ## Senses the road to the left
-func senseLeft():
+func lookLeft():
 	var sen = sensorLeft.sense()
 	var tileOn = body.sense()
 	if sen == tileOn:
@@ -65,7 +65,7 @@ func senseLeft():
 	return sen
 	
 ## Senses the road to the right
-func senseRight():
+func lookRight():
 	var sen = sensorRight.sense()
 	var tileOn = body.sense()
 	if sen == tileOn:

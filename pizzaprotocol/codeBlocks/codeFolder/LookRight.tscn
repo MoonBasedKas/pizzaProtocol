@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://vvqoj0vyo5aj"]
 
-[ext_resource type="Script" uid="uid://ch8gypr7rmcav" path="res://codeBlocks/codeFolder/blockBodyCode/MoveBlockScript.gd" id="1_p2xbd"]
+[ext_resource type="Script" uid="uid://d0u8nhf7qk5ur" path="res://codeBlocks/codeFolder/blockBodyCode/LookRightBlockScript.gd" id="1_p2xbd"]
 [ext_resource type="Texture2D" uid="uid://fsrfdqldb1xg" path="res://codeBlocks/blockSprites/lookRightBlock.png" id="2_p2xbd"]
 [ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/blockSharedScripts/clickable_area.gd" id="3_clbh7"]
 [ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockSharedScripts/blockConnector.gd" id="4_dkkoy"]
@@ -18,7 +18,7 @@ radius = 24.7386
 [sub_resource type="CircleShape2D" id="CircleShape2D_a82ns"]
 radius = 15.0
 
-[node name="MoveCodeBlock" type="CharacterBody2D"]
+[node name="LookRightBlock" type="CharacterBody2D"]
 script = ExtResource("1_p2xbd")
 
 [node name="blockSprite" type="Sprite2D" parent="."]
