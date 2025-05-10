@@ -37,8 +37,24 @@ the flow of the program.
     - Moves the player object forward by a single unit: length of single tile.
 - Turn left/right block
     - Turns the player 90 degrees in the way their block says.
+- Look left/front/right block
+    - Checks what is to the corresponding direction to the player. Sorry no behind block :C
+- [] block
+    - This block allows for custom inputs for now this only handles strings.
+- If block
+    - This is a conditional and will have some condition.
+- End If Block
+    - This tells us when a if statement ends.
+- While Block
+    - This begins a look allowing for some automation
+- End While Block
+    - this tells the program where the while loop ends.
+- =
+    - Equality comparison
+    - NOTE: May be changed.
 
-More to be added
+More to be added, sorry no for loops, if I implemented them I'd want them to behave more like 
+python loops but we won't have arrays in the prototype.
 
 
 
@@ -50,15 +66,17 @@ class that is inherited for both blocks and the code object. You'll need to inhe
 ### Making it spawn
 In the code editor menu you will need to add the blocks sprite there and attach a script to it.
 This script will only notify the program when its clicked and add that name into the creation queue. 
-You'll want to modify [CREATION] to actually make this block spawned. It'll follow the same format you see 
-with the rest of the code there. Just call the function which creates the block.
+You'll want to modify level nodes to actually make this block spawned. It'll follow the same format you see 
+with the rest of the code there. Just call the function which creates the block. There is a creation script
+which you'll want to apply to a png in the editor. You'll want to add your block somewhere on the list of 
+blocks in order for it to be used.
 
 
 ## Controls 
 Arrow keys - move your camera.
 , - Move code menu up.
 . - Move code Menu down.
-space - Start.
+/ - Start Level.
 - - zoom out.
 = - zoom in.
 
@@ -93,13 +111,16 @@ using these systems we'd be able to teach the player different programming probl
 these in combination.
 
 Levels introduce:
-1. Basic syntax, hello world version of this language. Move forward once.
+1. Basic syntax, hello world version of this language. Move forward once. 
+    - Status: Mostly Complete
 2. Conditional statements using if. Make the correct decision on a turn where the right path is 
 randomly chosen.
+    - Status: Incomplete, blocks are spawnable but have no behavior and no level.
 3. Large city navigation using if and while statements. User is limited to a singular move 
 instruction.
+    - Status: Incomplete, blocks are spawnable but have no behavior and no level.
 
-Currently, we have 0/3
+Currently, we have 1/3
 
 ## Sprite style
 All sprites are drawn on 32h x 32w canvases where h and w are an integer. This is to keep the art 
