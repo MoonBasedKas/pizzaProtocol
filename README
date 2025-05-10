@@ -54,7 +54,8 @@ the flow of the program.
     - NOTE: May be changed.
 
 More to be added, sorry no for loops, if I implemented them I'd want them to behave more like 
-python loops but we won't have arrays in the prototype.
+python loops but we won't have arrays in the prototype and the games only use of strings only
+requires comparing two strings.
 
 
 
@@ -112,7 +113,7 @@ these in combination.
 
 Levels introduce:
 1. Basic syntax, hello world version of this language. Move forward once. 
-    - Status: Mostly Complete
+    - Status: Mostly Complete, needs dialoug written and scene changes.
 2. Conditional statements using if. Make the correct decision on a turn where the right path is 
 randomly chosen.
     - Status: Incomplete, blocks are spawnable but have no behavior and no level.
@@ -134,6 +135,7 @@ Tile maps are generally the largest of the blocks, but this is purely because of
 Each tile on the map is still drawn to 32x32 and exported by a factor of 5.
 
 ## Would the game's language receive more support beyond the game?
-This would be an interesting idea and would not be difficult to modify the project to perform 
-all the operations up to intermediate code generation. Luckily if someone else wishes to do this
-the games project will remain open source.
+I do not have any interest in that, as I would want to rewrite the block system as currently the amount of nodes it requires 
+modifying is absurd, you need to first creatae a block, create a class for "byte code", and allow for it to be spawnable. 
+I may be interested in converting the game into a compiler as the blocks being lexems makes parsing, syntax, and semantic 
+analysis much easier. If I were to go forward with a compiler I would most likely perform a C# rewrite.
