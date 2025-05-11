@@ -16,4 +16,4 @@ func addInstruction(ins):
 ## This should never be called.
 func exec(inter, vars):
 	inter.execute()
-	return null
+	return 0

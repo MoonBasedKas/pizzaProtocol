@@ -18,9 +18,17 @@ func execute():
 	var instructions = startPoint
 	var vars = {}
 	var temp = null
-	for ins in instructions:
+	var length = len(instructions)
+	var i = 0
+#	We must abandon the totaly based for loop.
+	while i < length:
 		await get_tree().create_timer(speed).timeout
-		ins.exec(self, vars)
+		i += instructions[i].exec(self, vars)
+		i += 1
+	
+	#for ins in instructions:
+		#await get_tree().create_timer(speed).timeout
+		#ins.exec(self, vars)
 		
 	
 	

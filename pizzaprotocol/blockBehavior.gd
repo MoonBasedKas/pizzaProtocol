@@ -8,7 +8,7 @@ var top = null
 var bottom = null
 var left = null
 var right = null
-var type = "" ## Will always be all lowercase with underscores
+var type = "" ## Will always be all lowercase start uppercase next words.
 var allowed = []
 
 var rng = RandomNumberGenerator.new()
@@ -81,3 +81,9 @@ func exportBlock(allowed, genBlock):
 	
 func getBelow():
 	return bottom
+	
+func getRight():
+	return right
+	
+func getType():
+	return type
