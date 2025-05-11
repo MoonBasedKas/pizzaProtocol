@@ -1,5 +1,5 @@
 extends blockBehavior
-class_name CustomInputBlock
+class_name IfBlock
 
 func _ready():
 	self.type = "if"
