@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c82l8gl1w571k"
-path="res://.godot/imported/IfBlock.png-61c8ceda82d83d8491c6129d26ec4c10.ctex"
+uid="uid://twsu4cdgmtkm"
+path="res://.godot/imported/ifBlock.png-ac64b7c7f4909276cc871a4fcd3c36f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://codeBlocks/blockSprites/IfBlock.png"
-dest_files=["res://.godot/imported/IfBlock.png-61c8ceda82d83d8491c6129d26ec4c10.ctex"]
+source_file="res://codeBlocks/blockSprites/ifBlock.png"
+dest_files=["res://.godot/imported/ifBlock.png-ac64b7c7f4909276cc871a4fcd3c36f6.ctex"]
 
 [params]
 

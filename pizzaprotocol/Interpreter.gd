@@ -37,7 +37,7 @@ func execute():
 
 
 ## Begins execution of a specfic function.
-func execFunction(function):
+func execFunction(_function):
 	var instructions = startPoint.fetchInstructions()
 	var vars = {}
 	var ret = null
