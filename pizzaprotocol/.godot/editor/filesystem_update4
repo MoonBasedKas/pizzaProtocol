@@ -8,3 +8,6 @@ res://codeBlocks/codeFolder/GenericCodeBlock.tscn
 res://scenes/level1.tscn
 res://scenes/player.tscn
 res://codeBlocks/codeFolder/MoveBlock.tscn
+res://dialogue/dialogue_control.tscn
+res://dialogue/dialogue_control.gd
+res://Interpreter.gd
