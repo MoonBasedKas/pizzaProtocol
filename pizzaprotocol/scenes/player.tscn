@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cmxxacj0cxfg6" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://d6w2ypmko08a" path="res://scenes/DACI.png" id="2_g2els"]
-[ext_resource type="Script" uid="uid://drkmirtqsgpgg" path="res://scenes/PlayerHitBody.gd" id="3_qhqgy"]
-[ext_resource type="Script" uid="uid://bc3dmsjr1pu7x" path="res://scenes/Sensor.gd" id="4_dqkch"]
+[ext_resource type="Script" path="res://scenes/PlayerHitBody.gd" id="3_qhqgy"]
+[ext_resource type="Script" path="res://scenes/Sensor.gd" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(122, 378)
