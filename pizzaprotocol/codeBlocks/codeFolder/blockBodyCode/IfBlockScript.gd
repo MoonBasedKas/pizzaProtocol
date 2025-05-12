@@ -9,10 +9,9 @@ func _physics_process(delta: float) -> void:
 
 
 func returnSelf():
-	var temp = IfBlock.new()
-	var sVal = get_node("LineEdit")
-	temp.setValue(sVal.text) 
+	var temp = IfPizza.new()
 	var i = self
+	var cond = []
 	var count = 0
 	while i != null:
 		
@@ -24,6 +23,14 @@ func returnSelf():
 		
 	if i == null:
 		count = 1
+		
+	i = self.getRight()
+	while i != null:
+		print(i)
+		cond.append(i.returnSelf())
+		i = i.getRight()
 	
+		
+	temp.setCond(cond)
 	temp.setJump(count)
 	return temp

@@ -1,6 +1,6 @@
 extends instruction
 
-class_name IfBlock
+class_name IfPizza
 
 var ifFalse = 0
 var condition = []
@@ -8,18 +8,18 @@ var condition = []
 
 ## Moves the player forward a specified amount.
 func exec(inter: Interpreter, vars):
-	if evalCond():
+	if evalCond(inter, vars):
 		return 0
 		
 	return ifFalse
 	
 ## evalutes if the condition is true
-func evalCond():
+func evalCond(inter, vars):
 	if condition == []:
 		return true
 	
-	var l = condition[0].exec()
-	var r = condition[-1].exec()
+	var l = condition[0].exec(inter, vars)
+	var r = condition[-1].exec(inter, vars)
 	
 #	For now the prototype this works but the a final implementation would
 #	Need this changed.

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://1ekie6vgqsg7"]
 
-[ext_resource type="Script" uid="uid://btpu5spj2w11a" path="res://blockBehavior.gd" id="1_78js0"]
+[ext_resource type="Script" uid="uid://cjihvgxvhpf1d" path="res://codeBlocks/codeFolder/blockBodyCode/EqualBlock.gd" id="1_78js0"]
 [ext_resource type="Texture2D" uid="uid://b23uinoqy0a1g" path="res://codeBlocks/blockSprites/eqBlock.png" id="2_78js0"]
 [ext_resource type="Script" uid="uid://rej7cm5d3hx" path="res://codeBlocks/blockSharedScripts/clickable_area.gd" id="3_ubb1y"]
 [ext_resource type="Script" uid="uid://c56q2wfo8un7" path="res://codeBlocks/blockSharedScripts/blockConnector.gd" id="4_o0pdl"]
