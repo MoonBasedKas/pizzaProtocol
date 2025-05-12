@@ -79,11 +79,19 @@ func exportBlock(allowed, genBlock):
 	ins.bindParams(params)	
 	return [ins, bottom]
 	
+# Woaw, I gotta get my block attributes, Based!
+
 func getBelow():
 	return bottom
 	
 func getRight():
 	return right
+	
+func getAbove():
+	return top
+	
+func getLeft():
+	return left
 	
 func getType():
 	return type

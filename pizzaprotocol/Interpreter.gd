@@ -23,6 +23,7 @@ func execute():
 #	We must abandon the totaly based for loop.
 	while i < length:
 		await get_tree().create_timer(speed).timeout
+		print(instructions, i)
 		i += instructions[i].exec(self, vars)
 		i += 1
 	

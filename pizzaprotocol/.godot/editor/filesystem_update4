@@ -8,3 +8,11 @@ res://codeBlocks/codeFolder/EndWhileBlock.tscn
 res://codeBlocks/codeFolder/EqualBlock.tscn
 res://codeBlocks/codeFolder/blockBodyCode/EqualBlock.gd
 res://codeBlocks/codeExec/Equal.gd
+res://blockBehavior.gd
+res://codeBlocks/codeFolder/blockBodyCode/WhileBlockScript.gd
+res://codeBlocks/codeFolder/WhileBlock.tscn
+res://codeBlocks/codeExec/While.gd
+res://codeBlocks/codeExec/EndWhile.gd
+res://codeBlocks/codeFolder/blockBodyCode/EndWhileBlockScript.gd
+res://codeBlocks/codeFolder/CustomInputBlock.tscn
+res://Interpreter.gd
