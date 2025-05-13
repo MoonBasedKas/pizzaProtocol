@@ -4,7 +4,7 @@ extends Node
 var player = null
 
 var speed = 0.5
-
+var run = false
 ## Start point of where to execute from
 var startPoint = []
 ## Each function that is callable.
@@ -14,15 +14,16 @@ var variables = {}
 
 ## Begins program execution.
 func execute():
-	print(startPoint)
+
 	var instructions = startPoint
 	var vars = {}
 	var length = len(instructions)
 	var i = 0
 #	We must abandon the totaly based for loop.
 	while i < length:
+		if not run:
+			break
 		await get_tree().create_timer(speed).timeout
-		print(instructions, i)
 		i += instructions[i].exec(self, vars)
 		i += 1
 

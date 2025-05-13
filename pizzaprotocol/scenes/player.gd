@@ -8,8 +8,12 @@ var sensorFront = null
 var sensorLeft = null
 var sensorRight = null
 var body = null
+var originalPosition = Vector2(0,0)
+var originalRot = 0.0
 
 func _ready():
+	originalPosition = self.global_position
+	originalRot = self.global_rotation
 	body = get_node("Hit")
 	sensorFront = get_node("SenseFront")
 	sensorLeft = get_node("SenseLeft")
@@ -20,12 +24,12 @@ func _physics_process(delta):
 	pass
 	#if not exec:
 		#pass
-	#elif Input.is_action_just_pressed("scroll_Up"):
-		#move()
-	#elif Input.is_action_just_pressed("scroll_Right"):
-		#right()
-	#elif Input.is_action_just_pressed("scroll_Left"):
-		#left()
+	if Input.is_action_just_pressed("scroll_Up"):
+		move()
+	elif Input.is_action_just_pressed("scroll_Right"):
+		right()
+	elif Input.is_action_just_pressed("scroll_Left"):
+		left()
 		
 
 ## moves the player forward
@@ -71,3 +75,7 @@ func lookRight():
 	if sen == tileOn:
 		return ""
 	return sen
+	
+func reset():
+	global_position = originalPosition
+	global_rotation = originalRot

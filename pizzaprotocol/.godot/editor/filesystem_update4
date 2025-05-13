@@ -1,3 +1,4 @@
+res://scenes/level2/level2.tscn
 res://scenes/codeMenu.tscn
 res://scenes/CodeCamera.tscn
 res://scenes/CodeBlocks.tscn
@@ -5,9 +6,13 @@ res://codeBlocks/codeFolder/StartBlock.tscn
 res://HUD/editorHud.tscn
 res://codeBlocks/codeFolder/TurnRight.tscn
 res://codeBlocks/codeFolder/GenericCodeBlock.tscn
-res://scenes/level1.tscn
+res://scenes/level1/level1.tscn
 res://scenes/player.tscn
 res://codeBlocks/codeFolder/MoveBlock.tscn
 res://dialogue/dialogue_control.tscn
-res://dialogue/dialogue_control.gd
+res://dialogue/level_intros/level1_intro.tscn
+res://scenes/WinTile.gd
+res://scenes/level1/level_1.gd
+res://scenes/level_container.gd
 res://Interpreter.gd
+res://scenes/player.gd

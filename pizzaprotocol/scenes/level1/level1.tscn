@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=4 uid="uid://24bwf87la4hx"]
 
 [ext_resource type="PackedScene" uid="uid://ug7awd5fmo3k" path="res://scenes/player.tscn" id="1_g2h75"]
-[ext_resource type="Script" uid="uid://cv3kq33j4i34h" path="res://scenes/level_1.gd" id="1_wwpf4"]
+[ext_resource type="Script" uid="uid://cv3kq33j4i34h" path="res://scenes/level1/level_1.gd" id="1_wwpf4"]
 [ext_resource type="PackedScene" uid="uid://cqcoknf12ki0m" path="res://scenes/codeMenu.tscn" id="2_m7ahb"]
 [ext_resource type="Script" uid="uid://bcexs8bs4c5f2" path="res://scenes/level_container.gd" id="3_dwgg1"]
 [ext_resource type="Texture2D" uid="uid://1yg1w8bomxtm" path="res://levelsprites/roadtileMap.png" id="4_ru4tf"]
-[ext_resource type="Script" path="res://scenes/WinTile.gd" id="6_6sh32"]
+[ext_resource type="Script" uid="uid://bwm353uddfrva" path="res://scenes/WinTile.gd" id="6_6sh32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru4tf"]
 texture = ExtResource("4_ru4tf")

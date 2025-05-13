@@ -15,7 +15,7 @@ size = Vector2(79, 179.75)
 size = Vector2(700.5, 77.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(596, 78)
+size = Vector2(714, 78)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -66,5 +66,5 @@ collision_mask = 2
 script = ExtResource("4_dqkch")
 
 [node name="Right" type="CollisionShape2D" parent="SenseRight"]
-position = Vector2(365, -177)
+position = Vector2(424, -177)
 shape = SubResource("RectangleShape2D_qlg0r")
