@@ -24,12 +24,12 @@ func _physics_process(delta):
 	pass
 	#if not exec:
 		#pass
-	if Input.is_action_just_pressed("scroll_Up"):
-		move()
-	elif Input.is_action_just_pressed("scroll_Right"):
-		right()
-	elif Input.is_action_just_pressed("scroll_Left"):
-		left()
+	#if Input.is_action_just_pressed("scroll_Up"):
+		#move()
+	#elif Input.is_action_just_pressed("scroll_Right"):
+		#right()
+	#elif Input.is_action_just_pressed("scroll_Left"):
+		#left()
 		
 
 ## moves the player forward

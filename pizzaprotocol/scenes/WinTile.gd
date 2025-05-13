@@ -27,4 +27,6 @@ func _process(delta):
 		if i.has_method("isPlayer"):
 			if victory:
 				print("win")
+			else:
+				print("lose")
 		
