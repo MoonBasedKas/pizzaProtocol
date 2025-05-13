@@ -20,7 +20,7 @@ func evalCond(inter, vars):
 	
 	var l = condition[0].exec(inter, vars)
 	var r = condition[-1].exec(inter, vars)
-	
+	print(l,",", r)
 #	For now the prototype this works but the a final implementation would
 #	Need this changed.
 	if l == r:

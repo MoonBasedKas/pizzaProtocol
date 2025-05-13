@@ -14,7 +14,6 @@ func _ready():
 	var temp = get_children()
 	for i in temp:
 		if "Win" in i.name:
-			#print(i.name)
 			children.append(i)
 	temp = children.pick_random()
 	temp.setVictory(true)

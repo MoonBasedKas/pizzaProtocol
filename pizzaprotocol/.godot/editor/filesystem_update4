@@ -16,3 +16,6 @@ res://scenes/level1/level_1.gd
 res://scenes/level_container.gd
 res://Interpreter.gd
 res://scenes/player.gd
+res://scenes/level2/Street.gd
+res://codeBlocks/codeFolder/IfBlock.tscn
+res://codeBlocks/codeExec/IfBlock.gd

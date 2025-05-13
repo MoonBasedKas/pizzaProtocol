@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dox50ao84er70"]
+[gd_scene load_steps=15 format=4 uid="uid://dox50ao84er70"]
 
 [ext_resource type="Script" uid="uid://cv3kq33j4i34h" path="res://scenes/level1/level_1.gd" id="1_y5pcy"]
 [ext_resource type="PackedScene" uid="uid://cqcoknf12ki0m" path="res://scenes/codeMenu.tscn" id="2_4700a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://1yg1w8bomxtm" path="res://levelsprites/roadtileMap.png" id="4_5djj2"]
 [ext_resource type="PackedScene" uid="uid://ug7awd5fmo3k" path="res://scenes/player.tscn" id="5_rfvp0"]
 [ext_resource type="Script" uid="uid://bwm353uddfrva" path="res://scenes/WinTile.gd" id="6_efbog"]
+[ext_resource type="Script" uid="uid://dqaq7pq83yf73" path="res://scenes/level2/Street.gd" id="7_4700a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru4tf"]
 texture = ExtResource("4_5djj2")
@@ -1521,6 +1522,15 @@ size = Vector2(170, 489.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5pcy"]
 size = Vector2(496, 174)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4700a"]
+size = Vector2(478, 162.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqcq2"]
+size = Vector2(169, 474)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5djj2"]
+size = Vector2(155.75, 481.5)
+
 [node name="level2" type="Node2D"]
 script = ExtResource("1_y5pcy")
 
@@ -1537,35 +1547,67 @@ tile_set = SubResource("TileSet_dwgg1")
 [node name="Player" parent="LevelContainer" instance=ExtResource("5_rfvp0")]
 position = Vector2(80, -99)
 
-[node name="Win1" type="Area2D" parent="LevelContainer"]
+[node name="1Win" type="Area2D" parent="LevelContainer"]
 position = Vector2(2093, -1408)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_efbog")
 
-[node name="Victory1" type="CollisionShape2D" parent="LevelContainer/Win1"]
+[node name="Victory1" type="CollisionShape2D" parent="LevelContainer/1Win"]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-1216, 368.75)
 shape = SubResource("RectangleShape2D_ru4tf")
+debug_color = Color(0.950089, 2.31028e-06, 0.570311, 0.42)
 
-[node name="Win3" type="Area2D" parent="LevelContainer"]
+[node name="3Win" type="Area2D" parent="LevelContainer"]
 position = Vector2(2093, -1408)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_efbog")
 
-[node name="Victory3" type="CollisionShape2D" parent="LevelContainer/Win3"]
+[node name="Victory3" type="CollisionShape2D" parent="LevelContainer/3Win"]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-3137, 369)
 shape = SubResource("RectangleShape2D_ru4tf")
+debug_color = Color(0.380682, 0.613209, 3.85046e-07, 0.42)
 
-[node name="Win2" type="Area2D" parent="LevelContainer"]
+[node name="2Win" type="Area2D" parent="LevelContainer"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_efbog")
 
-[node name="Victory2" type="CollisionShape2D" parent="LevelContainer/Win2"]
+[node name="Victory2" type="CollisionShape2D" parent="LevelContainer/2Win"]
 position = Vector2(-72, -2002)
 shape = SubResource("RectangleShape2D_y5pcy")
+
+[node name="2Street" type="Area2D" parent="LevelContainer"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_4700a")
+
+[node name="CrossRoad2" type="CollisionShape2D" parent="LevelContainer/2Street"]
+position = Vector2(-84, -1362.75)
+shape = SubResource("RectangleShape2D_4700a")
+
+[node name="1Street" type="Area2D" parent="LevelContainer"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_4700a")
+
+[node name="CrossRoad1" type="CollisionShape2D" parent="LevelContainer/1Street"]
+position = Vector2(239.5, -1036)
+shape = SubResource("RectangleShape2D_vqcq2")
+debug_color = Color(0.965731, 9.62615e-08, 0.484899, 0.42)
+
+[node name="3Street" type="Area2D" parent="LevelContainer"]
+position = Vector2(239.5, -1036)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_4700a")
+
+[node name="CrossRoad3" type="CollisionShape2D" parent="LevelContainer/3Street"]
+position = Vector2(-647.375, -2.25)
+shape = SubResource("RectangleShape2D_5djj2")
+debug_color = Color(0.358738, 0.617789, 1.92523e-07, 0.42)
