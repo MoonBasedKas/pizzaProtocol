@@ -15,7 +15,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("reset"):
 		temp = get_node("CodeEditor")
 		Interpreter.run = false
-		ProgramData.exec = false
+		ProgramData.stopExec()
 		temp.visible = true
 		temp = get_node("LevelContainer")
 		temp.visible = false

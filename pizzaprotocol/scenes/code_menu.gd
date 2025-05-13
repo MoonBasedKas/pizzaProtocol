@@ -9,14 +9,15 @@ var startBlock = false
 var compiled = false
 var readyToPause = false
 
-
+func pause():
+	readyToPause = false
 
 func _ready():
 	
 	return 0
 	
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("pause") or ProgramData.getExec():
+	if Input.is_action_just_pressed("pause") or ProgramData.getExec():
 		if not compiled:
 			compileBlocks()
 			compiled = true

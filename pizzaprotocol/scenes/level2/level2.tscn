@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bcexs8bs4c5f2" path="res://scenes/level_container.gd" id="3_vqcq2"]
 [ext_resource type="Texture2D" uid="uid://1yg1w8bomxtm" path="res://levelsprites/roadtileMap.png" id="4_5djj2"]
 [ext_resource type="PackedScene" uid="uid://ug7awd5fmo3k" path="res://scenes/player.tscn" id="5_rfvp0"]
-[ext_resource type="Script" uid="uid://bwm353uddfrva" path="res://scenes/WinTile.gd" id="6_efbog"]
+[ext_resource type="Script" uid="uid://bqp81ua0i2t74" path="res://scenes/WinTile2.gd" id="6_4700a"]
 [ext_resource type="Script" uid="uid://dqaq7pq83yf73" path="res://scenes/level2/Street.gd" id="7_4700a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru4tf"]
@@ -1551,7 +1551,7 @@ position = Vector2(80, -99)
 position = Vector2(2093, -1408)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("6_efbog")
+script = ExtResource("6_4700a")
 
 [node name="Victory1" type="CollisionShape2D" parent="LevelContainer/1Win"]
 light_mask = 2
@@ -1564,7 +1564,7 @@ debug_color = Color(0.950089, 2.31028e-06, 0.570311, 0.42)
 position = Vector2(2093, -1408)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("6_efbog")
+script = ExtResource("6_4700a")
 
 [node name="Victory3" type="CollisionShape2D" parent="LevelContainer/3Win"]
 light_mask = 2
@@ -1576,7 +1576,7 @@ debug_color = Color(0.380682, 0.613209, 3.85046e-07, 0.42)
 [node name="2Win" type="Area2D" parent="LevelContainer"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("6_efbog")
+script = ExtResource("6_4700a")
 
 [node name="Victory2" type="CollisionShape2D" parent="LevelContainer/2Win"]
 position = Vector2(-72, -2002)

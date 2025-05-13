@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxkkf24xgbro"]
+
+[ext_resource type="Script" uid="uid://bqaa2dt30ahm8" path="res://dialogue/level_intros/level2_intro.gd" id="1_hfw5v"]
+[ext_resource type="PackedScene" uid="uid://c516vbbpn71hv" path="res://dialogue/dialogue_control.tscn" id="2_v0dip"]
+
+[node name="Level2Intro" type="Node"]
+script = ExtResource("1_hfw5v")
+
+[node name="DialogueControl" parent="." instance=ExtResource("2_v0dip")]

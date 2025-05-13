@@ -19,3 +19,12 @@ res://scenes/player.gd
 res://scenes/level2/Street.gd
 res://codeBlocks/codeFolder/IfBlock.tscn
 res://codeBlocks/codeExec/IfBlock.gd
+res://dialogue/level_intros/level1_intro.gd
+res://dialogue/level_intros/level1_end.gd
+res://scenes/WinTile2.gd
+res://dialogue/level_intros/level3_intro.gd
+res://dialogue/level_intros/level3_intro.tscn
+res://dialogue/level_intros/level2_intro.tscn
+res://dialogue/level_intros/level2_intro.gd
+res://scenes/code_menu.gd
+res://scenes/level2/level_2.gd

@@ -2,13 +2,7 @@ extends Node
 
 var dialogue_control: DialogueControl
 var level_dialogues = [
-	"Hello, you are a pizza professional making a delivery robot.",
-	"Use the code blocks to guide your delivery robot.",
-	"Let's start with your first delivery!",
-	"You'll want the robot to cross the finish line.",
-	"To make a program you'll click the blocks on the left.",
-	"Then drag the block to touch by their connectors.",
-	"Every program will at least need a start node."
+	"Congrats!"
 ]
 
 func _ready():
