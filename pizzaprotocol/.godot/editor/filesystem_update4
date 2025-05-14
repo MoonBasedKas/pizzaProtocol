@@ -19,3 +19,7 @@ res://dialogue/level_intros/level3_intro.gd
 res://dialogue/level_intros/level2_intro.gd
 res://scenes/WinTile.gd
 res://scenes/WinTile2.gd
+res://dialogue/level_intros/game_win.tscn
+res://dialogue/level_intros/game_win.gd
+res://scenes/level1/level_1.gd
+res://dialogue/level_intros/level1_intro.gd

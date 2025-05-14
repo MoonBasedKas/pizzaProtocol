@@ -30,7 +30,7 @@ func _process(delta):
 				Interpreter.clearFuncs()
 				Interpreter.run = false
 				ProgramData.stopExec()
-				get_tree().change_scene_to_file("res://dialogue/level_intros/level3_intro.tscn")
+				get_tree().change_scene_to_file("res://dialogue/level_intros/game_win.tscn")
 			else:
 				print("lose")
 		

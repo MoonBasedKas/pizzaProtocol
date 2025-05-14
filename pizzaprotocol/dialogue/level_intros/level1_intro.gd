@@ -8,7 +8,8 @@ var level_dialogues = [
 	"You'll want the robot to cross the finish line.",
 	"To make a program you'll click the blocks on the left.",
 	"Then drag the block to touch by their connectors.",
-	"Every program will at least need a start node."
+	"Every program will at least need a start node.",
+	"To look at the level press \\ and click on the arrow to start the level once ready"
 ]
 
 func _ready():

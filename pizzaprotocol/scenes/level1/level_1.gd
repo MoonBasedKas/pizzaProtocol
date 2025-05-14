@@ -25,7 +25,7 @@ func _physics_process(delta):
 		Interpreter.run = true
 		
 	if Input.is_action_just_pressed("reset"):
-		temp = get_node("LevelContainer")
+		temp = get_node("LevelView")
 		if temp.visible:
 			temp.visible = false
 		else:
