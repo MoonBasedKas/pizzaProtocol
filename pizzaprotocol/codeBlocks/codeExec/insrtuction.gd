@@ -3,6 +3,7 @@ extends Node
 class_name instruction
 
 var params = [] # List of data types to execute on
+var pointer = null
 
 
 ## Executes a block, 

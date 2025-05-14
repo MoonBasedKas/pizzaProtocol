@@ -3,7 +3,7 @@ extends Node
 ## Player object
 var player = null
 
-var speed = 0.5
+var speed = 0.2
 var run = false
 ## Start point of where to execute from
 var startPoint = []
@@ -27,7 +27,8 @@ func execute():
 		if not run:
 			break
 		await get_tree().create_timer(speed).timeout
-		i += instructions[i].exec(self, vars)
+		if run:
+			i += instructions[i].exec(self, vars)
 		i += 1
 
 

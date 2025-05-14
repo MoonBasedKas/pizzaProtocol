@@ -5,5 +5,7 @@ class_name turnRight
 
 ## Turns the player right a specified amount.
 func exec(inter: Interpreter, vars):
-	inter.player.right()
+	pointer = Interpreter.getPlayer()
+	if pointer != null:
+		pointer.right()
 	return 0
