@@ -26,6 +26,8 @@ func _process(delta):
 		
 		if i.has_method("isPlayer"):
 			if victory:
+				Interpreter.clearFuncs()
+				ProgramData.stopExec()
 				get_tree().change_scene_to_file("res://dialogue/level_intros/level2_intro.tscn")
 			else:
 				print("lose")

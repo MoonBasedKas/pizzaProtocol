@@ -12,6 +12,9 @@ var functions = {}
 ## Global variables probably won't be supported.
 var variables = {}
 
+func clearFuncs():
+	startPoint = []
+
 ## Begins program execution.
 func execute():
 
