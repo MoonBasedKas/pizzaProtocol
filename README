@@ -5,6 +5,13 @@ programming puzzles and translating them into a scenario that is easier to imagi
 the game mainly focuses on navigating 2d worlds however, the game should be easy to extend 
 to many other sitautions that could be useful for a user.
 
+## How do I compile.
+You'll want to open this game up in Godot 4.4.x, you'll want to go into the editor tab after opening and importing the project. In the editor tab 
+you'll want to click on the manage exploit templates and have it download from the official github releases mirror. After that you'll want to close 
+out on the template manager and go into projects and click exports. You'll want to add a windows desktop preset. You'll want to disbale the debug export console 
+wrapper. Then enable embed PCK file. If modify resources under application is enabled you'll want to disable that. After that you'll want to click export project.
+Finally pick your desired directory and click save. After that you'll have successfully made and compiled the game.
+
 ## How does the game work?
 The game works in a 3 tier system
 1. Code editor
@@ -113,13 +120,13 @@ these in combination.
 
 Levels introduce:
 1. Basic syntax, hello world version of this language. Move forward once. 
-    - Status: Mostly Complete, needs dialoug written and scene changes.
+    - Status: Mostly Complete
 2. Conditional statements using if. Make the correct decision on a turn where the right path is 
 randomly chosen.
-    - Status: Incomplete, blocks are spawnable but have no behavior and no level.
+    - Status: Complete
 3. Large city navigation using if and while statements. User is limited to a singular move 
 instruction.
-    - Status: Incomplete, blocks are spawnable but have no behavior and no level.
+    - Status: Incomplete, level has not been made yet.
 
 Currently, we have 1/3
 
