@@ -1,0 +1,110 @@
+---
+config:
+  theme: neo-dark
+  look: classic
+id: 14a29cff-e589-405f-88db-ed0e5cb2bb2b
+---
+classDiagram
+    direction TB
+    class CodeEditorSystem {
+        +blockBehavior
+        +block_sprite
+        +blockConnector
+        +clickable_area
+        +overlap_prevention
+        +camera_2d
+        +codeMenu
+    }
+    class CodeCompilationSystem {
+        +block conversion
+        +connection validation
+        +jumps resolution
+        +instruction creation
+        +compileBlocks()
+    }
+    class CodeExecutionSystem {
+        +Interpreter
+        +program_data
+        +play button
+    }
+    class LevelSystem {
+        +level_1
+        +level_container
+        +player
+        +sensor
+        +WinTile classes
+    }
+    class InstructionTypes {
+        +start
+        +move
+        +turnLeft/turnRight
+        +senseFront/senseLeft/senseRight
+        +IfPizza/EndIf
+        +WhilePizza/EndWhile
+        +equal
+        +pizzaString
+    }
+    class GameStateManagement {
+        +LevelIntroBase
+        +Level1/2/3Intro
+        +HitWall
+        +GameWin
+        +scene transitions
+    }
+    class UIComponents {
+        +DialogueControl
+        +camera_2d
+        +CodeBlocks
+        +play
+    }
+    class SceneManagement {
+        +CodeCamera.tscn
+        +CodeBlocks.tscn
+        +codeMenu.tscn
+        +player.tscn
+        +Level scenes
+        +Dialogue scenes
+    }
+    CodeEditorSystem --> CodeCompilationSystem
+    CodeCompilationSystem --> CodeExecutionSystem
+    CodeExecutionSystem --> LevelSystem
+    InstructionTypes --> CodeCompilationSystem
+    UIComponents --> CodeEditorSystem
+    UIComponents --> LevelSystem
+    UIComponents --> GameStateManagement
+    GameStateManagement --> LevelSystem
+    SceneManagement --> CodeEditorSystem
+    SceneManagement --> LevelSystem
+    SceneManagement --> GameStateManagement
+    note for CodeEditorSystem "User interface for dragging and connecting blocks"
+    note for CodeCompilationSystem "Converts block connections into executable instructions"
+    note for CodeExecutionSystem "Runs instructions to control player in level"
+    note for LevelSystem "Contains gameplay elements, player, and win conditions"
+    note for SceneManagement "Organizes game components into Godot scenes"
+    note for InstructionTypes "Comparison and string values"
+    class GameStateManagement {
+        +LevelIntroBase - Base for level intros
+        +Level1/2/3Intro - Level-specific intros
+        +HitWall - Game over state
+        +GameWin - Victory state
+        +scene transitions
+    }
+    class UIComponents {
+        +DialogueControl - Dialog display
+        +block_sprite - Visual block representation
+        +clickable_area - Mouse interaction
+        +play - Execution control
+    }
+    CodeEditorSystem --> CodeCompilationSystem: blocks converted to
+    CodeCompilationSystem --> CodeExecutionSystem: instructions passed to
+    CodeExecutionSystem --> LevelSystem: manipulates
+    InstructionTypes --> CodeCompilationSystem: implemented as
+    UIComponents --> CodeEditorSystem: used in
+    UIComponents --> LevelSystem: used in
+    UIComponents --> GameStateManagement: used in
+    GameStateManagement --> LevelSystem: manages
+    note for CodeEditorSystem "User interface for\\ndragging and connecting blocks"
+    note for CodeCompilationSystem "Converts block connections\\ninto executable instructions"
+    note for CodeExecutionSystem "Runs instructions to\\ncontrol player in level"
+    note for UIComponents "Handles user interface\\nand interactions"
+    note for GameStateManagement "Manages level progression,\\ndialogue, and game states"

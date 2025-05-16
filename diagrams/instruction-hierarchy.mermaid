@@ -1,0 +1,112 @@
+classDiagram
+    direction TB
+    
+    class instruction {
+        +params: Array
+        +pointer: Node
+        +exec(inter: Interpreter, vars)
+        +bindParams(par)
+    }
+    
+    %% Movement instructions
+    class move {
+        +exec(inter: Interpreter, vars): int
+        +buildInstruction(instructions): int
+    }
+    
+    class turnLeft {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    class turnRight {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    %% Sensing instructions
+    class senseFront {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class senseLeft {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class senseRight {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    %% Control flow instructions
+    class IfPizza {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +evalCond(inter, vars): bool
+        +setCond(cond)
+        +setJump(i)
+        +buildInstruction(instructions): int
+    }
+    
+    class EndIf {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +setCond(cond)
+        +setJump(i)
+        +buildInstruction(instructions): int
+    }
+    
+    class WhilePizza {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +evalCond(inter, vars): bool
+        +setCond(cond)
+        +setJump(i)
+        +buildInstruction(instructions): int
+    }
+    
+    class EndWhile {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +setJump(i)
+    }
+    
+    %% Value instructions
+    class equal {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class pizzaString {
+        +value: String
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+        +setValue(val)
+    }
+    
+    %% Program entry point
+    class start {
+        +instructionType: String
+        +instructions: Array
+        +fetchInstructions(): Array
+        +addInstruction(ins)
+        +exec(inter, vars): int
+    }
+    
+    instruction <|-- move
+    instruction <|-- turnLeft
+    instruction <|-- turnRight
+    instruction <|-- senseFront
+    instruction <|-- senseLeft
+    instruction <|-- senseRight
+    instruction <|-- IfPizza
+    instruction <|-- EndIf
+    instruction <|-- WhilePizza
+    instruction <|-- EndWhile
+    instruction <|-- equal
+    instruction <|-- pizzaString
+    instruction <|-- start

@@ -1,0 +1,457 @@
+classDiagram
+    class Node {
+        <<Godot Base>>
+    }
+    
+    class Node2D {
+        <<Godot Base>>
+    }
+    
+    class Area2D {
+        <<Godot Base>>
+    }
+    
+    class Sprite2D {
+        <<Godot Base>>
+    }
+    
+    class CollisionShape2D {
+        <<Godot Base>>
+    }
+    
+    class Control {
+        <<Godot Base>>
+    }
+    
+    class Camera2D {
+        <<Godot Base>>
+    }
+    
+    class CharacterBody2D {
+        <<Godot Base>>
+    }
+    
+    %% Code Block System
+    class blockBehavior {
+        +speed: int
+        +top: blockBehavior
+        +bottom: blockBehavior
+        +left: blockBehavior
+        +right: blockBehavior
+        +type: String
+        +allowed: Array
+        +_physics_process(delta)
+        +doPhysics(delta)
+        +getConnections()
+        +exportBlock(allowed, genBlock)
+        +getBelow()
+        +getRight()
+        +getAbove()
+        +getLeft()
+        +getType()
+    }
+    
+    class BlockContainer {
+        +_physics_process(delta)
+    }
+    
+    class block_sprite {
+        -clicked: bool
+        +_input(event)
+        +isClicked(): bool
+    }
+    
+    class creationNode {
+        -clicked: bool
+        +_input(event)
+        +isClicked(): bool
+    }
+    
+    class blockConnector {
+        -connection: Area2D
+        +_process(delta)
+        +getConnection(): Area2D
+        +getParent(): Node
+    }
+    
+    class clickable_area {
+        -clicked: bool
+        -inside: bool
+        +_mouse_enter()
+        +_mouse_exit()
+        +_physics_process(delta)
+        +isClicked(): bool
+    }
+    
+    class overlap_prevention {
+        -colliding: Node
+        +_on_Area2D_body_entered(body)
+        +_on_Area2D_body_exited(body)
+        +getOverlapping(): Node
+    }
+    
+    %% Interpreter and Instructions
+    class Interpreter {
+        -player: Node
+        -speed: float
+        -run: bool
+        -startPoint: Array
+        -functions: Dictionary
+        -variables: Dictionary
+        +clearFuncs()
+        +execute()
+        +execFunction(function)
+        +raiseError()
+        +addInstruction(ins, funcName)
+        +createFunction(funcName)
+        +printInstructions()
+        +setPlayer(progPlayer)
+        +getPlayer()
+    }
+    
+    class program_data {
+        -creation_queue: Array
+        -exec: bool
+        +stopExec()
+        +startExec()
+        +getExec(): bool
+        +addQueue(name)
+        +dequeue()
+        +printQueue()
+    }
+    
+    class instruction {
+        +params: Array
+        +pointer: Node
+        +exec(inter: Interpreter, vars)
+        +bindParams(par)
+    }
+    
+    class move {
+        +exec(inter: Interpreter, vars): int
+        +buildInstruction(instructions): int
+    }
+    
+    class turnLeft {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    class turnRight {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    class senseFront {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class senseLeft {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class senseRight {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class IfPizza {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +evalCond(inter, vars): bool
+        +setCond(cond)
+        +setJump(i)
+        +buildInstruction(instructions): int
+    }
+    
+    class EndIf {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +setCond(cond)
+        +setJump(i)
+        +buildInstruction(instructions): int
+    }
+    
+    class WhilePizza {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +evalCond(inter, vars): bool
+        +setCond(cond)
+        +setJump(i)
+        +buildInstruction(instructions): int
+    }
+    
+    class EndWhile {
+        +ifFalse: int
+        +condition: Array
+        +exec(inter: Interpreter, vars): int
+        +setJump(i)
+    }
+    
+    class equal {
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+    }
+    
+    class pizzaString {
+        +value: String
+        +exec(inter: Interpreter, vars): String
+        +buildInstruction(instructions): int
+        +setValue(val)
+    }
+    
+    class start {
+        +instructionType: String
+        +instructions: Array
+        +fetchInstructions(): Array
+        +addInstruction(ins)
+        +exec(inter, vars): int
+    }
+    
+    %% UI and Camera System
+    class camera_2d {
+        +speed: int
+        +_process(delta)
+    }
+    
+    class play {
+        -clicked: bool
+        -inside: bool
+        +_mouse_enter()
+        +_mouse_exit()
+        +_physics_process(delta)
+    }
+    
+    %% Code Menu and Editor
+    class codeMenu {
+        +blocks: Array
+        +funcs: Array
+        +start: Node
+        +startBlock: bool
+        +compiled: bool
+        +readyToPause: bool
+        +_ready()
+        +_physics_process(delta)
+        +pause()
+        +createNodes()
+        +blockAlc(new): Node
+        +determineNode(name)
+        +compileBlocks()
+        +getBlocks(head, name)
+    }
+    
+    %% Level System
+    class level_container {
+        +exec: bool
+        +children: Array
+        +_physics_process(delta)
+        +_ready()
+    }
+    
+    class level_1 {
+        +exec: bool
+        +nodes: Array
+        +_ready()
+        +_physics_process(delta)
+    }
+    
+    class level_2 {
+        +exec: bool
+        +_ready()
+        +_physics_process(delta)
+    }
+    
+    class level_3 {
+        +exec: bool
+        +_ready()
+        +_physics_process(delta)
+    }
+    
+    %% Environment Objects
+    class Street {
+        +sName: String
+        +setName(n)
+        +read(): String
+    }
+    
+    class Wall {
+        +sName: String
+        +setName(n)
+        +read(): String
+        +_process(delta)
+    }
+    
+    %% Player System
+    class player {
+        +unitV: Vector2
+        +speed: int
+        +rot: int
+        +exec: bool
+        +sensorFront: sensor
+        +sensorLeft: sensor
+        +sensorRight: sensor
+        +body: sensor
+        +originalPosition: Vector2
+        +originalRot: float
+        +_ready()
+        +_physics_process(delta)
+        +move()
+        +left()
+        +right()
+        +lookFront(): String
+        +lookLeft(): String
+        +lookRight(): String
+        +reset()
+    }
+    
+    class sensor {
+        +sense(): String
+    }
+    
+    class PlayerHitBody {
+        +isPlayer(): bool
+    }
+    
+    %% Win Conditions
+    class WinTile {
+        +victory: bool
+        +road: String
+        +setVictory(v)
+        +setRoad(s)
+        +_process(delta)
+    }
+    
+    class WinTile2 {
+        +victory: bool
+        +road: String
+        +setVictory(v)
+        +setRoad(s)
+        +_process(delta)
+    }
+    
+    class WinTile3 {
+        +victory: bool
+        +road: String
+        +setVictory(v)
+        +setRoad(s)
+        +_process(delta)
+    }
+    
+    %% Dialogue System
+    class DialogueControl {
+        +dialogue_list: Array
+        +current_index: int
+        +is_dialogue_active: bool
+        +_ready()
+        +display(text: String)
+        +set_dialogue_list(dialogues: Array)
+        +advance_dialogue()
+        +_input(event)
+        +dialogue_complete signal
+    }
+    
+    class LevelIntroBase {
+        +dialogue_control: DialogueControl
+        +level_dialogues: Array
+        +_ready()
+        +start_intro()
+        +_on_dialogue_complete()
+    }
+    
+    class Level1Intro {
+        +level_dialogues
+    }
+    
+    class Level2Intro {
+        +level_dialogues
+    }
+    
+    class Level3Intro {
+        +level_dialogues
+    }
+    
+    class HitWall {
+        +level_dialogues
+    }
+    
+    class GameWin {
+        +level_dialogues
+    }
+    
+    %% Inheritance Relationships
+    Node <|-- instruction
+    instruction <|-- move
+    instruction <|-- turnLeft
+    instruction <|-- turnRight
+    instruction <|-- senseFront
+    instruction <|-- senseLeft
+    instruction <|-- senseRight
+    instruction <|-- IfPizza
+    instruction <|-- EndIf
+    instruction <|-- WhilePizza
+    instruction <|-- EndWhile
+    instruction <|-- equal
+    instruction <|-- pizzaString
+    instruction <|-- start
+    
+    Sprite2D <|-- block_sprite
+    Sprite2D <|-- creationNode
+    Area2D <|-- blockConnector
+    Area2D <|-- clickable_area
+    Area2D <|-- play
+    Area2D <|-- sensor
+    Area2D <|-- WinTile
+    Area2D <|-- WinTile2
+    Area2D <|-- WinTile3
+    Area2D <|-- Street
+    Area2D <|-- Wall
+    
+    sensor <|-- PlayerHitBody
+    
+    CollisionShape2D <|-- overlap_prevention
+    Control <|-- DialogueControl
+    
+    Node <|-- LevelIntroBase
+    LevelIntroBase <|-- Level1Intro
+    LevelIntroBase <|-- Level2Intro
+    LevelIntroBase <|-- Level3Intro
+    LevelIntroBase <|-- HitWall
+    LevelIntroBase <|-- GameWin
+    
+    Node2D <|-- codeMenu
+    Node2D <|-- level_container
+    Node2D <|-- level_1
+    Node2D <|-- level_2
+    Node2D <|-- level_3
+    
+    Camera2D <|-- camera_2d
+    CharacterBody2D <|-- player
+    
+    %% Component Relationships
+    blockBehavior --> blockConnector: has
+    blockBehavior --> clickable_area: has
+    
+    Interpreter --> instruction: executes
+    Interpreter --> player: controls
+    
+    LevelIntroBase --> DialogueControl: uses
+    play --> program_data: controls execution
+    
+    player --> sensor: uses
+    level_container --> player: contains
+    level_container --> WinTile: contains
+    level_container --> Street: contains
+    level_container --> Wall: contains
+    
+    codeMenu --> blockBehavior: manages
+    codeMenu --> Interpreter: sends instructions to
+    
+    level_1 --> codeMenu: contains
+    level_1 --> level_container: contains
+    level_2 --> codeMenu: contains
+    level_2 --> level_container: contains
+    level_3 --> codeMenu: contains
+    level_3 --> level_container: contains

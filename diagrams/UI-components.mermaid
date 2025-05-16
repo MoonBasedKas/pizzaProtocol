@@ -1,0 +1,101 @@
+classDiagram
+    direction TB
+    
+    class Sprite2D {
+        <<Godot Base>>
+    }
+    
+    class Area2D {
+        <<Godot Base>>
+    }
+    
+    class CollisionShape2D {
+        <<Godot Base>>
+    }
+    
+    class Control {
+        <<Godot Base>>
+    }
+    
+    class blockBehavior {
+        +speed: int
+        +top, bottom, left, right: blockBehavior
+        +type: String
+        +allowed: Array
+        +_physics_process(delta)
+        +doPhysics(delta)
+        +getConnections()
+        +exportBlock(allowed, genBlock)
+        +getBelow(), getRight(), getAbove(), getLeft()
+        +getType()
+    }
+    
+    class block_sprite {
+        -clicked: bool
+        +_input(event)
+        +isClicked(): bool
+    }
+    
+    class creationNode {
+        -clicked: bool
+        +_input(event)
+        +isClicked(): bool
+    }
+    
+    class blockConnector {
+        -connection: Area2D
+        +_process(delta)
+        +getConnection(): Area2D
+        +getParent(): Node
+    }
+    
+    class clickable_area {
+        -clicked: bool
+        -inside: bool
+        +_mouse_enter()
+        +_mouse_exit()
+        +_physics_process(delta)
+        +isClicked(): bool
+    }
+    
+    class overlap_prevention {
+        -colliding: Node
+        +_on_Area2D_body_entered(body)
+        +_on_Area2D_body_exited(body)
+        +getOverlapping(): Node
+    }
+    
+    class DialogueControl {
+        +dialogue_list: Array
+        +current_index: int
+        +is_dialogue_active: bool
+        +_ready()
+        +display(text: String)
+        +set_dialogue_list(dialogues: Array)
+        +advance_dialogue()
+        +_input(event)
+        +dialogue_complete signal
+    }
+    
+    class program_data {
+        -creation_queue: Array
+        -exec: bool
+        +stopExec()
+        +startExec()
+        +getExec(): bool
+        +addQueue(name)
+        +dequeue()
+        +printQueue()
+    }
+    
+    Sprite2D <|-- block_sprite
+    Sprite2D <|-- creationNode
+    Area2D <|-- blockConnector
+    Area2D <|-- clickable_area
+    CollisionShape2D <|-- overlap_prevention
+    Control <|-- DialogueControl
+    
+    blockBehavior o-- blockConnector: top, bottom, left, right
+    blockBehavior *-- clickable_area: drag detection
+    blockBehavior *-- overlap_prevention: collision prevention
+    creationNode --> program_data: adds blocks to queue

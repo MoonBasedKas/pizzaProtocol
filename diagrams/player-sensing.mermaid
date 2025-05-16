@@ -1,0 +1,118 @@
+classDiagram
+    direction TB
+    
+    class CharacterBody2D {
+        <<Godot Base>>
+    }
+    
+    class Area2D {
+        <<Godot Base>>
+    }
+    
+    class player {
+        +unitV: Vector2
+        +speed: int
+        +rot: int
+        +exec: bool
+        +sensorFront: sensor
+        +sensorLeft: sensor
+        +sensorRight: sensor
+        +body: PlayerHitBody
+        +originalPosition: Vector2
+        +originalRot: float
+        +_ready()
+        +_physics_process(delta)
+        +move()
+        +left()
+        +right()
+        +lookFront(): String
+        +lookLeft(): String
+        +lookRight(): String
+        +reset()
+    }
+    
+    class sensor {
+        +sense(): String
+    }
+    
+    class PlayerHitBody {
+        +isPlayer(): bool
+    }
+    
+    class Street {
+        +sName: String
+        +setName(n)
+        +read(): String
+    }
+    
+    class Wall {
+        +sName: String
+        +setName(n)
+        +read(): String
+        +_process(delta): Detects player collision
+    }
+    
+    class WinTile {
+        +victory: bool
+        +road: String
+        +setVictory(v)
+        +setRoad(s)
+        +_process(delta)
+    }
+    
+    class instruction {
+        +params: Array
+        +pointer: Node
+        +exec(inter: Interpreter, vars)
+    }
+    
+    class move {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    class turnLeft {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    class turnRight {
+        +exec(inter: Interpreter, vars): int
+    }
+    
+    class senseFront {
+        +exec(inter: Interpreter, vars): String
+    }
+    
+    class senseLeft {
+        +exec(inter: Interpreter, vars): String
+    }
+    
+    class senseRight {
+        +exec(inter: Interpreter, vars): String
+    }
+    
+    CharacterBody2D <|-- player
+    Area2D <|-- sensor
+    Area2D <|-- WinTile
+    Area2D <|-- Street
+    Area2D <|-- Wall
+    sensor <|-- PlayerHitBody
+    
+    instruction <|-- move
+    instruction <|-- turnLeft
+    instruction <|-- turnRight
+    instruction <|-- senseFront
+    instruction <|-- senseLeft
+    instruction <|-- senseRight
+    
+    player *-- sensor: contains
+    player *-- PlayerHitBody: contains
+    player --> WinTile: interacts with
+    player --> Street: detects with sensors
+    player --> Wall: collides with
+    
+    move --> player: calls move()
+    turnLeft --> player: calls left()
+    turnRight --> player: calls right()
+    senseFront --> player: calls lookFront()
+    senseLeft --> player: calls lookLeft()
+    senseRight --> player: calls lookRight()

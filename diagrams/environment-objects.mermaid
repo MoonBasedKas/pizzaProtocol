@@ -1,0 +1,88 @@
+classDiagram
+    direction TB
+    
+    class Area2D {
+        <<Godot Base>>
+    }
+    
+    class CharacterBody2D {
+        <<Godot Base>>
+    }
+    
+    class player {
+        +unitV: Vector2
+        +speed: int
+        +rot: int
+        +sensorFront: sensor
+        +sensorLeft: sensor
+        +sensorRight: sensor
+        +body: PlayerHitBody
+        +move()
+        +left()
+        +right()
+        +lookFront(): String
+        +lookLeft(): String
+        +lookRight(): String
+    }
+    
+    class sensor {
+        +sense(): String
+    }
+    
+    class PlayerHitBody {
+        +isPlayer(): bool
+    }
+    
+    class Street {
+        +sName: String
+        +setName(n)
+        +read(): String
+    }
+    
+    class Wall {
+        +sName: String
+        +_process(delta): Detects collision and triggers game over
+    }
+    
+    class WinTile {
+        +victory: bool
+        +road: String
+        +setVictory(v)
+        +setRoad(s)
+        +_process(delta): Detects collision and triggers level completion
+    }
+    
+    class WinTile2 {
+        +victory: bool
+        +road: String
+        +_process(delta): Transitions to level 3
+    }
+    
+    class WinTile3 {
+        +victory: bool
+        +road: String
+        +_process(delta): Transitions to game win
+    }
+    
+    class level_container {
+        +exec: bool
+        +children: Array
+        +_ready(): Randomly selects victory condition
+    }
+    
+    CharacterBody2D <|-- player
+    Area2D <|-- sensor
+    Area2D <|-- Street
+    Area2D <|-- Wall
+    Area2D <|-- WinTile
+    Area2D <|-- WinTile2
+    Area2D <|-- WinTile3
+    
+    player --> Street: senses with lookFront/Left/Right
+    player --> Wall: collides with body sensor
+    player --> WinTile: triggers level completion
+    player --> WinTile2: triggers level completion
+    player --> WinTile3: triggers level completion
+    
+    level_container --> WinTile: sets victory state
+    level_container --> Street: sets street name

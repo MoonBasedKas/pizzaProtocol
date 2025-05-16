@@ -1,0 +1,9 @@
+Main Class Diagram: A comprehensive view of all classes in the system with their properties, methods, and relationships. This is the most detailed diagram showing the full structure of the codebase.
+System Architecture Diagram: A high-level view of the major subsystems (CodeEditorSystem, CodeCompilationSystem, etc.) and how they interact with each other. This diagram is useful for understanding the overall architecture without getting lost in the details.
+Instruction Hierarchy Diagram: Focuses specifically on the instruction class hierarchy, showing all the different instruction types that can be executed by the interpreter. This diagram is useful for understanding the programming language implemented in the game.
+UI Components Diagram: Shows the user interface components and how they interact. This diagram is useful for understanding how the drag-and-drop block programming interface works.
+Player and Sensing System Diagram: Focuses on the player character, its sensors, and how it interacts with the environment. This diagram is useful for understanding the game mechanics.
+Level Structure Diagram: Shows how the level scenes are structured and organized. This diagram is useful for understanding the Godot scene hierarchy in the game.
+Compilation and Execution Process Diagram: Shows the process of how code blocks are compiled into instructions and then executed. This diagram is useful for understanding the core mechanics of the visual programming system.
+Level Progression Diagram: A state diagram showing how players progress through the different levels of the game. This diagram is useful for understanding the game flow and level transitions.
+Environment Objects Diagram: Focuses on the environment objects (Streets, Walls, WinTiles) and how they interact with the player. This diagram is useful for understanding the level design and win conditions.

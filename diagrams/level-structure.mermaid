@@ -1,0 +1,51 @@
+classDiagram
+    class Node2D
+    class Area2D
+    class level_1
+    class level_2
+    class level_3
+    class level_container
+    class codeMenu
+    class camera_2d
+    class player
+    class Street
+    class Wall
+    class WinTile
+    class DialogueControl
+    class Scene
+    class CodeCamera_Scene
+    class CodeBlocks_Scene
+    class codeMenu_Scene
+    class player_Scene
+    class dialogue_Scene
+    
+    Node2D <|-- level_1
+    Node2D <|-- level_2
+    Node2D <|-- level_3
+    Node2D <|-- level_container
+    Node2D <|-- codeMenu
+    
+    Area2D <|-- Street
+    Area2D <|-- Wall
+    Area2D <|-- WinTile
+    
+    Scene <|-- CodeCamera_Scene
+    Scene <|-- CodeBlocks_Scene
+    Scene <|-- codeMenu_Scene
+    Scene <|-- player_Scene
+    Scene <|-- dialogue_Scene
+    
+    level_1 *-- codeMenu
+    level_1 *-- level_container
+    level_2 *-- codeMenu
+    level_2 *-- level_container
+    level_3 *-- codeMenu
+    level_3 *-- level_container
+    
+    level_container *-- player
+    level_container *-- WinTile
+    level_container *-- Street
+    level_container *-- Wall
+    
+    codeMenu *-- camera_2d
+    codeMenu *-- CodeBlocks_Scene

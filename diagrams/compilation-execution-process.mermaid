@@ -1,0 +1,99 @@
+classDiagram
+    class program_data {
+        -creation_queue: Array
+        -exec: bool
+        +stopExec()
+        +startExec()
+        +getExec(): bool
+        +addQueue(name)
+        +dequeue()
+    }
+    
+    class creationNode {
+        -clicked: bool
+        +_input(event)
+        +isClicked(): bool
+    }
+    
+    class codeMenu {
+        +blocks: Array
+        +funcs: Array
+        +start: Node
+        +compiled: bool
+        +readyToPause: bool
+        +createNodes()
+        +blockAlc(new)
+        +determineNode(name)
+        +compileBlocks()
+        +getBlocks(head, name)
+    }
+    
+    class blockBehavior {
+        +top: blockBehavior
+        +bottom: blockBehavior
+        +left: blockBehavior
+        +right: blockBehavior
+        +type: String
+        +getConnections()
+        +getBelow()
+        +getRight()
+        +getAbove()
+        +getLeft()
+        +getType()
+    }
+    
+    class Interpreter {
+        -player: Node
+        -speed: float
+        -run: bool
+        -startPoint: Array
+        -functions: Dictionary
+        +clearFuncs()
+        +execute()
+        +addInstruction(ins, funcName)
+        +setPlayer(progPlayer)
+        +getPlayer()
+    }
+    
+    class instruction {
+        +params: Array
+        +pointer: Node
+        +exec(inter: Interpreter, vars)
+        +bindParams(par)
+    }
+    
+    class level_1 {
+        +_physics_process(delta)
+    }
+    
+    class level_container {
+        +exec: bool
+        +_physics_process(delta)
+        +_ready()
+    }
+    
+    class player {
+        +move()
+        +left()
+        +right()
+        +lookFront()
+        +lookLeft()
+        +lookRight()
+    }
+    
+    class play {
+        +_physics_process(delta)
+    }
+    
+    %% Compilation and Execution Flow
+    creationNode --> program_data
+    program_data --> codeMenu
+    codeMenu --> blockBehavior
+    blockBehavior --> blockBehavior
+    codeMenu --> Interpreter
+    Interpreter --> instruction
+    instruction --> player
+    play --> program_data
+    program_data --> codeMenu
+    level_1 --> level_container
+    level_container --> Interpreter

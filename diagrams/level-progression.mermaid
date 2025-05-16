@@ -1,0 +1,67 @@
+stateDiagram-v2
+    [*] --> Level1Intro: Game Start
+    
+    Level1Intro --> Level1: Tutorial Complete
+    Level1 --> Level1CodeEditing: Initial State
+    
+    Level1CodeEditing --> Level1Execution: Press / or Play Button
+    Level1Execution --> Level1Complete: Player reaches correct WinTile
+    Level1Execution --> WallCollision: Player hits Wall
+    
+    WallCollision --> HitWallState: Transition to game over
+    HitWallState --> Level1: Try Again
+    
+    Level1Complete --> Level2Intro: Transition to Level 2
+    Level2Intro --> Level2: Intro Complete
+    Level2 --> Level2CodeEditing: Initial State
+    
+    Level2CodeEditing --> Level2Execution: Press / or Play Button
+    Level2Execution --> Level2Complete: Player reaches correct WinTile
+    Level2Execution --> WallCollision: Player hits Wall
+    
+    Level2Complete --> Level3Intro: Transition to Level 3
+    Level3Intro --> Level3: Intro Complete
+    Level3 --> Level3CodeEditing: Initial State
+    
+    Level3CodeEditing --> Level3Execution: Press / or Play Button
+    Level3Execution --> Level3Complete: Player reaches correct WinTile
+    Level3Execution --> WallCollision: Player hits Wall
+    
+    Level3Complete --> GameWinState: Game Complete
+    GameWinState --> [*]: End Game
+    
+    state Level1CodeEditing {
+        LevelView1 --> CodeView1: Toggle View
+        CodeView1 --> LevelView1: Toggle View
+    }
+    
+    state Level2CodeEditing {
+        LevelView2 --> CodeView2: Toggle View
+        CodeView2 --> LevelView2: Toggle View
+    }
+    
+    state Level3CodeEditing {
+        LevelView3 --> CodeView3: Toggle View
+        CodeView3 --> LevelView3: Toggle View
+    }
+    
+    state Level1Execution {
+        codeMenu_Pause1 --> ShowLevelContainer1: Hide code editor
+        ShowLevelContainer1 --> RunInterpreter1: Execute instructions
+        RunInterpreter1 --> CheckWinCondition1: WinTile detection
+        RunInterpreter1 --> CheckWallCollision1: Wall detection
+    }
+    
+    state Level2Execution {
+        codeMenu_Pause2 --> ShowLevelContainer2: Hide code editor
+        ShowLevelContainer2 --> RunInterpreter2: Execute instructions
+        RunInterpreter2 --> CheckWinCondition2: WinTile detection
+        RunInterpreter2 --> CheckWallCollision2: Wall detection
+    }
+    
+    state Level3Execution {
+        codeMenu_Pause3 --> ShowLevelContainer3: Hide code editor
+        ShowLevelContainer3 --> RunInterpreter3: Execute instructions
+        RunInterpreter3 --> CheckWinCondition3: WinTile detection
+        RunInterpreter3 --> CheckWallCollision3: Wall detection
+    }
